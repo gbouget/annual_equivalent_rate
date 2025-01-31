@@ -52,34 +52,6 @@ L'objectif de cet exercice est d'étudier le rendement des supports d'investisse
     \item Développer un programme qui simule l'évolution du capital en fonction du montant investi, du taux de rendement, de la fréquence de capitalisation des intérêts et de la durée d'investissement. Indiquer le taux d'intérêt effectif.
 \end{itemize}
 
-\begin{center}
-\rule{0.5\textwidth}{.4pt}
-\end{center}
-
-\textbf{Bonus}
-
-Analyser l'impact de la volatilité du taux de rendement sur la valorisation du capital :
-
-\begin{itemize}
-    \item \textit{Modélisation des variations du taux de rendement :}  
-    Supposer que le taux de rendement suit une distribution normale, avec une moyenne de 5\% et un écart-type de 1\%.  
-    \item \textit{Impact des fluctuations annuelles :}  
-    Étudier comment des variations de $\pm 1\%$ par an influencent le capital final après 10, 20 et 30 ans.  
-    \item \textit{Simulation de Monte Carlo :}  
-    Effectuer 10 000 simulations aléatoires pour analyser la sensibilité du capital final aux fluctuations du taux de rendement pour les supports $S_a$ et $S_q$.  
-    \item \textit{Mesure des risques :}  
-    \begin{itemize}
-        \item Calculer la Value at Risk (VaR) après 30 ans avec un niveau de confiance de 95\%.  
-        \item Déterminer les intervalles de confiance à 95\% pour le capital final et estimer les bornes inférieure et supérieure après chaque période d’investissement.  
-        \item Mesurer l’écart-type des rendements annuels pour évaluer la volatilité du capital dans un environnement incertain.  
-    \end{itemize}
-    \item \textit{Visualisation des résultats :}  
-    \begin{itemize}
-        \item Générer des courbes de distribution du capital final pour $S_a$ et $S_q$ sur 10 000 simulations.  
-        \item Comparer la dispersion des rendements à l’aide d’histogrammes et de boxplots afin d’évaluer la stabilité relative des investissements.  
-    \end{itemize}
-\end{itemize}
-
 \subsection{Hypothèses de travail}
 \begin{itemize}
 \item Les intérêts sont composés pour les deux supports (réinvestis immédiatement après leur versement).
@@ -88,6 +60,56 @@ Analyser l'impact de la volatilité du taux de rendement sur la valorisation du 
 \item Le rendement quotidien $r_q$ de $S_q$ vaut $\frac{r_a}{365}$.
 \item Aucun frais ou taxe n'est appliqué.
 \item Aucun versement ou retrait supplémentaire n’est effectué pendant la durée de l’investissement (seul le capital initial $C_0$ est placé).
+\end{itemize}
+
+\section{Pour aller plus loin}
+
+Explorer l'impact de la volatilité du taux de rendement sur la valorisation du capital. Contrairement aux hypothèses d’un taux fixe, la réalité des marchés financiers impose des fluctuations qui affectent de manière significative la croissance du capital. Dans cette section, nous proposons une analyse probabiliste des rendements, en introduisant l'incertitude dans les prévisions à travers différentes méthodes statistiques.
+
+\subsection{Modélisation des variations aléatoires du taux}
+\begin{itemize}
+    \item \textbf{Hypothèse de distribution} :  
+    le taux de rendement annuel \( r_t \) suit une loi normale avec une moyenne de 7\% et un écart-type de 2\% :  
+    \[
+    r_t \sim \mathcal{N}(7\%, \, 2\%^2)
+    \]
+    La modélisation capture à la fois le rendement moyen à long terme des tendances historiques et les risques associés à la volatilité du marché, représentés par l'écart-type.
+\end{itemize}
+
+\subsection{Impact des fluctuations annuelles}
+\begin{itemize}
+    \item \textbf{Sensibilité du capital final} :  
+    analyser l'effet de variations annuelles de \( \pm 1\% \) sur le capital final après 10, 20 et 30 ans. Cette analyse met en évidence l'impact des fluctuations, même modestes, sur la performance à long terme des investissements.  
+    \item \textbf{Intervalles de confiance} :  
+    calculer les bornes inférieure et supérieure du capital final avec un niveau de confiance de 95\%, pour quantifier l'incertitude associée à ces variations.
+\end{itemize}
+
+\subsection{Simulation de Monte Carlo}
+\begin{itemize}
+    \item \textbf{Approche stochastique} :  
+    effectuer 10 000 simulations aléatoires des taux de rendement pour générer des trajectoires variées. Cette approche permet de modéliser un large éventail de scénarios possibles dans un environnement financier incertain.  
+    \item \textbf{Comparaison des supports} :  
+    analyser la sensibilité des supports \( S_a \) et \( S_q \) aux fluctuations des taux et évaluer leur performance dans des conditions de marché diverses, en mettant en évidence les avantages et inconvénients de chaque stratégie.
+\end{itemize}
+
+\subsection{Mesures de risque avancées}
+\begin{itemize}
+    \item \textbf{Value at Risk (VaR)} :  
+    Calculer la perte maximale attendue après 30 ans avec un niveau de confiance de 95\%, ce qui permet d’estimer le risque de perte sous des conditions extrêmes.  
+    \item \textbf{Volatilité des rendements} :  
+    Mesurer l'écart-type des rendements annuels pour quantifier la dispersion des résultats et évaluer la stabilité des investissements sur le long terme.  
+    \item \textbf{Intervalles de confiance} :  
+    Estimer les intervalles de confiance à 95\% pour le capital final à différentes échéances, permettant ainsi d’évaluer les fourchettes probables dans lesquelles le capital pourrait se situer à la fin de chaque période d'investissement.
+\end{itemize}
+
+\subsection{Visualisation des résultats}
+\begin{itemize}
+    \item \textbf{Distribution du capital final} :  
+    générer des histogrammes comparant les distributions du capital final pour \( S_a \) et \( S_q \). Ces graphiques permettront de visualiser les effets de la volatilité sur la performance des investissements à long terme.  
+    \item \textbf{Dispersion des rendements} :  
+    utiliser des boîtes à moustaches (boxplots) pour visualiser la stabilité relative des deux supports et identifier leurs variations au fil du temps, en montrant ainsi la distribution des rendements pour chaque scénario.  
+    \item \textbf{Graphiques interactifs} :  
+    représenter les trajectoires simulées des taux de rendement et leur impact sur le capital à travers des graphiques dynamiques, offrant une vue d'ensemble claire des scénarios possibles.
 \end{itemize}
 
 \end{document}
