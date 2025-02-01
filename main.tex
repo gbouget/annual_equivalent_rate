@@ -62,8 +62,32 @@ L'objectif de cet exercice est d'étudier le rendement des supports d'investisse
 \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial $C_0$ est investi).
 \end{itemize}
 
-\section{Pour aller plus loin}
+\section{Proposition d'une solution}
+\subsection{Démarche méthodologique}
+L'analyse se décompose en deux grandes parties :
 
+\subsubsection*{Partie 1 : Le piège de l'équivalence naïve}
+\begin{enumerate}
+    \item Choisir \( r_q = \frac{r_a}{365} \).
+    \item Calculer le capital final en utilisant la formule des intérêts simples, et constater que ce calcul mène à une apparente équivalence entre la capitalisation quotidienne et annuelle (ce qui est illusoire).
+    \item Calculer le capital final avec la formule des intérêts composés pour la capitalisation quotidienne, et constater la différence par rapport aux intérêts simples.
+    \item Déduire la différence entre les deux résultats, soulignant l'effet puissant des intérêts composés.
+    \item Tracer des courbes représentant l'évolution du capital en fonction du temps afin de mettre en évidence cet écart.
+    \item Énoncer la formule qui exprime la différence de rendement entre la capitalisation quotidienne et l'approche naïve.
+    \item Démontrer, par une preuve par l'absurde, que l'approche consistant à multiplier directement \( r_q \) par 365 est incompatible avec le fonctionnement réel de la capitalisation quotidienne.
+\end{enumerate}
+
+\subsubsection*{Partie 2 : Standardiser les comparaisons avec le taux annuel effectif (AER)}
+\begin{itemize}
+    \item Définir le taux annuel effectif (AER) qui intègre la fréquence de capitalisation. La formule générale est :
+    \[
+    AER = \left(1 + \frac{r_a}{n}\right)^n - 1,
+    \]
+    où \( n \) est le nombre de capitalisations par an (avec \( n = 365 \) pour la capitalisation quotidienne, et \( n \to \infty \) pour la capitalisation continue).
+    \item Utiliser ce taux pour comparer équitablement les rendements des supports \( S_a \) et \( S_q \), ainsi que d'autres produits financiers, en offrant une mesure standardisée du rendement effectif.
+\end{itemize}
+
+\section{Pour aller plus loin}
 Explorer l'impact de la volatilité du taux de rendement sur la valorisation du capital. Contrairement aux hypothèses d’un taux fixe, la réalité des marchés financiers impose des fluctuations qui affectent de manière significative la croissance du capital. Dans cette section, nous proposons une analyse probabiliste des rendements, en introduisant l'incertitude dans les prévisions à travers différentes méthodes statistiques.
 
 \subsection{Modélisation des variations aléatoires du taux}
