@@ -22,43 +22,42 @@
   {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
   {\end{tabular}\par\vspace{\belowdisplayskip}}
 
-\title{Fréquence de capitalisation et taux d'intérêt effectif : quel impact sur vos investissements ?}
+\title{Impact de la fréquence de capitalisation sur le taux d'intérêt effectif et la valorisation des investissements}
 \author{Gaëtan Bouget}
 
 \begin{document}
 \maketitle
 
-Dans un environnement financier où les offres d’investissement se multiplient, comprendre le coût ou le rendement réel d’un produit est essentiel. Le taux d’intérêt effectif (AER) permet de comparer des supports avec des fréquences de capitalisation différentes, en intégrant l’effet des intérêts composés. Cet article propose une analyse comparative de deux stratégies d’investissement et étudie leur sensibilité aux fluctuations des taux.
+\section{Problème}
+Dans un contexte financier caractérisé par une diversification accrue des produits d’investissement, la variation des fréquences de capitalisation complique l’évaluation objective des rendements réels. Ainsi, deux actifs affichant un même taux nominal annuel peuvent générer des rendements distincts en raison des différentes fréquences de capitalisation, amplifiant ainsi l'effet des intérêts composés.
 
-\section{Mise en situation}
-\subsection{Problème}
-Je souhaite investir un capital initial $C_0$ mais j'hésite entre deux supports :
+\section{Objectif}
+L'objectif consiste à fournir une compréhension approfondie des mécanismes influençant le rendement réel des investissements et à établir une base solide pour la comparaison de diverses stratégies financières.
+
+\section{Méthode}
+L'approche adoptée pour atteindre l'objectif se décline en quatre étapes :
+\begin{enumerate}
+    \item mise en évidence des limites de la méthode de calcul des intérêts simples ;
+    \item intégration des intérêts composés dans l'évaluation du rendement ; 
+    \item démonstration, par développement binomial, de la supériorité des intérêts composés ;
+    \item déduction de la formule du taux effectif annuel (TEA).
+\end{enumerate}
+
+Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'étude de deux scénarios distincts à partir d'un investissement initial \( C_0 = 100\,000\ \text{€} \) :
 \begin{itemize}
-\item Le support $S_a$ verse les intérêts annuellement.
-\item Le support $S_q$  verse les intérêts quotidiennement.
+    \item un actif financier \( A_a \) affichant un taux nominal annuel \( r_a = 5\% \) avec une capitalisation annuelle ;
+    \item un actif financier \( A_q \) affichant un taux nominal annuel \( r_q = 5\% \) avec une capitalisation quotidienne (365 jours/an).
 \end{itemize}
 
-\subsection{Objectif}
-L'objectif de cet exercice est d'étudier le rendement des supports d'investissement et de modéliser les effets de différentes fréquences de capitalisation sur la valorisation du capital au fil du temps. Ce travail se divise en plusieurs étapes :
-
-\begin{itemize}
-    \item Étudier le rendement des supports $S_a$ et $S_q$ en fonction :
-    \begin{itemize}
-        \item du capital initial investi $C_0$ ;
-        \item de la durée d'investissement exprimée en années $t$ ;
-        \item du taux de rendement $r$.
-    \end{itemize}
-    \item Calculer le taux d'intérêt effectif de $S_q$ (Annual Equivalent Rate). Généraliser à toute période de capitalisation $n$, où $n$ est un entier positif représentant le nombre de capitalisations par an, avec $n \geq 1$ (capitalisation quotidienne pour $n = 365$ et continue lorsque $n \to \infty$).
-\end{itemize}
+Enfin, chaque étape est déclinée en une série de questions destinées à approfondir la compréhension du phénomène.
 
 \subsection{Hypothèses de travail}
+Les conditions suivantes sont posées :
 \begin{itemize}
-\item Les intérêts sont composés pour les deux supports.
-\item Une année vaut 365 jours.
-\item Le rendement annuel du support $S_a$ est noté $r_a$.
-\item Le rendement quotidien du support $S_q$ est noté $r_q$.
-\item Aucun frais ni taxe n'est appliqué.
-\item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial $C_0$ est investi).
+    \item Une année est considérée comme comprenant 365 jours.
+    \item Aucun frais ni taxe n'est appliqué.
+    \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial \( C_0 \) est investi).
+    \item Le taux de rendement est constant dans le temps.
 \end{itemize}
 
 \section{Proposition d'une solution}
