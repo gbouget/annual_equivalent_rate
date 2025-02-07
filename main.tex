@@ -17,6 +17,12 @@
 \usepackage{algorithmic}
 \usepackage{array}
 \usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{tcolorbox} % Pour les boîtes colorées
+\usepackage{fontawesome5} % Pour les icônes
+\usepackage{xcolor} % Pour les couleurs
+
+\definecolor{lightgreen}{RGB}{230, 255, 230}
 
 \newenvironment{conditions}
   {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
@@ -37,19 +43,34 @@ L'objectif consiste à fournir une compréhension approfondie des mécanismes in
 \section{Méthode}
 L'approche adoptée pour atteindre l'objectif se décline en quatre étapes :
 \begin{enumerate}
-    \item mise en évidence des limites de la méthode de calcul des intérêts simples ;
-    \item intégration des intérêts composés dans l'évaluation du rendement ; 
-    \item démonstration, par développement binomial, de la supériorité des intérêts composés ;
-    \item déduction de la formule du taux effectif annuel (TEA).
+    \item Mise en évidence des limites de la méthode de calcul des intérêts simples ;
+    \item Intégration des intérêts composés dans l'évaluation du rendement ;
+    \item Démonstration, par développement binomial, de la supériorité des intérêts composés ;
+    \item Déduction de la formule du taux effectif annuel (TEA).
 \end{enumerate}
 
-Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'étude de deux scénarios distincts à partir d'un investissement initial \( C_0 = 100\,000\ \text{€} \) :
-\begin{itemize}
-    \item un actif financier \( A_a \) affichant un taux nominal annuel \( r_a = 5\% \) avec une capitalisation annuelle ;
-    \item un actif financier \( A_q \) affichant un taux nominal annuel \( r_q = 5\% \) avec une capitalisation quotidienne (365 jours/an).
-\end{itemize}
+Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'investissement d'un capital initial de \( C_0 = 100\,000\ \text{€} \), réparti sur quatre actifs décrits dans le tableau~\ref{tab:scenarios}.
 
-Enfin, chaque étape est déclinée en une série de questions destinées à approfondir la compréhension du phénomène.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Actif} & \textbf{Type d'intérêt} & \textbf{Fréquence de capitalisation} & \textbf{Taux périodique} \\
+\hline
+\(A_q^s\) & Intérêts simples & Quotidienne & \(r_\text{quotidien} = \frac{5}{365}\%\) \\
+\hline
+\(A_a^s\) & Intérêts simples & Annuelle & \(r_\text{annuel} = 5\%\) \\
+\hline
+\(A_q^c\) & Intérêts composés & Quotidienne & \(r_\text{quotidien} = \frac{5}{365}\%\) \\
+\hline
+\(A_a^c\) & Intérêts composés & Annuelle & \(r_\text{annuel} = 5\%\) \\
+\hline
+\end{tabular}
+\caption{Scénarios d'investissement avec un capital initial \(C_0 = 100\,000\ \text{€}\).}
+\label{tab:scenarios}
+\end{table}
+
+Chaque étape de l'analyse sera ensuite détaillée à travers une série de questions destinées à approfondir la compréhension du phénomène.
 
 \subsection{Hypothèses de travail}
 Les conditions suivantes sont posées :
@@ -59,6 +80,79 @@ Les conditions suivantes sont posées :
     \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial \( C_0 \) est investi).
     \item Le taux de rendement est constant dans le temps.
 \end{itemize}
+
+\subsection{Questions}
+\subsubsection*{Étape 1 : intérêts simples}
+
+\begin{tcolorbox}[
+        colback=lightgreen, 
+        colframe=lightgreen, 
+        boxrule=0.5pt, 
+        arc=0pt, 
+        left=10pt, 
+        right=10pt, 
+        top=6pt, 
+        bottom=6pt, 
+        boxsep=2pt, 
+        before upper={\faLightbulb\hspace{10pt}}
+    ]
+        Les intérêts simples sont calculés uniquement sur le capital initial, et le montant des intérêts gagnés chaque période est constant. La formule suivante reflète bien cette caractéristique, car le produit \( r \times t \) est simplement ajouté au capital initial :
+
+        \[
+        C^{\text{simple}}(t) = C_0 \left(1 + r \times t\right)
+        \]
+        
+        où :
+        \begin{itemize}
+            \item \( C^{\text{simple}}(t) \) est le capital accumulé après une période \( t \).
+            \item \( C_0 \) est le capital initial investi.
+            \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient 0,05).
+            \item \( t \) est le temps écoulé, qui peut être exprimé en années ou en jours, selon la fréquence de capitalisation.
+        \end{itemize}
+    \end{tcolorbox}
+
+\begin{enumerate}[label=\textbf{Q\arabic*.}]
+    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final pour l'actif \( A_q^s \) après une durée \( t \) égale à :
+    \begin{enumerate}[label=(\alph*)]
+        \item \( t = 1 \) jour
+        \item \( t = 30 \) jours
+        \item \( t = 1 \) an
+        \item \( t = 30 \) ans
+    \end{enumerate}
+
+    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final pour l'actif $A_a^s$ après une durée \( t \) égale à :
+    \begin{enumerate}[label=(\alph*)]
+        \item \( t = 1 \) jour
+        \item \( t = 30 \) jours
+        \item \( t = 1 \) an
+        \item \( t = 30 \) ans
+    \end{enumerate}
+    
+    \item Remplir le tableau :\\
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Actif} & \textbf{1 jour} & \textbf{30 jours} & \textbf{1 an} & \textbf{30 ans} \\
+        \hline
+        $A_q^s$ & & & & \\
+        \hline
+        $A_a^s$ & & & & \\
+        \hline
+        \end{tabular}
+        \caption{Capital final pour différentes durées d'investissement avec intérêts simples et un capital initial de \( C_0 = 100\,000\ \text{€} \).}
+        \label{tab:simple_interest_results}
+    \end{table}
+
+    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) et un taux nominal annuel de 5\%, exprimer les fonctions permettant de calculer le capital final en fonction de la durée d'investissement \( t \) (exprimée en jours) pour chacun des deux actifs à intérêts simples :
+    \begin{enumerate}[label=(\alph*)]
+        \item \( C^s_q(t) \) pour l'actif à capitalisation quotidienne ;
+        \item \( C^s_a(t) \) pour l'actif à capitalisation annuelle.
+    \end{enumerate}
+
+    \item Tracer les courbes \( C^s_q(t) \) et \( C^s_a(t) \) en représentant la durée d'investissement \( t \) (exprimée en années) en abscisse et le capital final (en €) en ordonnée, pour \( t \) variant de 0 à 40 ans. Commenter l'évolution du capital au fil du temps.
+
+\end{enumerate}
 
 \section{Proposition d'une solution}
 \subsection{Démarche méthodologique}
