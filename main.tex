@@ -84,7 +84,7 @@ Les conditions suivantes sont posées :
 \end{itemize}
 
 \subsection{Questions}
-\subsubsection*{Étape 1 : intérêts simples}
+\subsubsection*{Étape 1 : calcul du capital final pour les actifs à intérêts simples}
 
 \begin{tcolorbox}[
         colback=lightgreen, 
@@ -146,17 +146,163 @@ Les conditions suivantes sont posées :
         \label{tab:simple_interest_results}
     \end{table}
 
-    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) et un taux nominal annuel de 5\%, exprimer les fonctions permettant de calculer le capital final en fonction de la durée d'investissement \( t \) (exprimée en jours) pour chacun des deux actifs à intérêts simples :
+
+    \item Soit un capital initial \( C_0 \) et un taux nominal annuel \( r_a \) ou un taux nominal quotidien \( r_q \), exprimer les fonctions permettant de calculer le capital final en fonction de la durée d'investissement \( t \) (exprimée en jours) pour chacun des deux actifs à intérêts simples :
     \begin{enumerate}[label=(\alph*)]
-        \item \( C^s_q(t) \) pour l'actif à capitalisation quotidienne ;
-        \item \( C^s_a(t) \) pour l'actif à capitalisation annuelle.
+        \item \( C^s_q(t) \) pour un actif à capitalisation quotidienne avec un taux périodique \( r_q \) ;
+        \item \( C^s_a(t) \) pour un actif à capitalisation annuelle avec un taux \( r_a \).
     \end{enumerate}
 
-    \item Tracer les courbes \( C^s_q(t) \) et \( C^s_a(t) \) en représentant la durée d'investissement \( t \) (exprimée en années) en abscisse et le capital final (en €) en ordonnée, pour \( t \) variant de 0 à 40 ans. Commenter l'évolution du capital au fil du temps.
+    \item Tracer les courbes \( C^s_q(t) \) et \( C^s_a(t) \) pour trois valeurs de capital initial : \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€. En abscisse, la durée d'investissement $t$ est comprise entre 0 et 40 ans. Commenter l'évolution du capital au fil du temps.
 
 \end{enumerate}
 
+
+\subsubsection*{Étape 2 : ajout des intérêts composés au comparatif}
+\subsubsection*{Étape 3 : démonstration par développement binomial}
+\subsubsection*{Étape 4 : détermination du taux effective annuel}
+
+
 \section{Solution}
+\subsection*{Étape 1 : calcul du capital final pour les actifs à intérêts simples}
+
+\noindent
+\textbf{Formule générale pour les intérêts simples :}
+\[
+C(t) = C_0 \times \left(1 + r \times t\right)
+\]
+où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( t \) la durée exprimée en jours.
+
+\begin{enumerate}[label=\textbf{Q\arabic*.}]
+    \item \textbf{Actif \( A_q^s \) (capitalisation quotidienne avec intérêts simples)} : 
+    \[
+    C_q^s(t) = 100\,000 \times \left(1 + \frac{0,05}{365} \times t\right)
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item \( t = 1 \) jour : 
+        \[
+        C_q^s(1) = 100\,000 \times \left(1 + \frac{0,05}{365} \times 1\right) = \boxed{100\,013,70\ \text{€}}
+        \]
+        
+        \item $t = 30$ jours : 
+        \[
+        C_q^s(30) = 100\,000 \times \left(1 + \frac{0,05}{365} \times 30\right) = \boxed{100\,410,96\ \text{€}}
+        \]
+        
+        \item $t = 1\ \text{an} = 365\ \text{jours}$~: 
+        \begin{align*}
+        C_q^s(365) &= 100\,000 \times \left(1 + \frac{0,05}{365} \times 365\right) \\
+                 &= 100\,000 \times (1 + 0,05) \\
+                 &= 100\,000 \times 1,05 \\
+                 &= \boxed{105\,000,00\ \text{€}}
+        \end{align*}
+        
+        \item $t = 30\ \text{ans} = 10\,950\ \text{jours}$~: 
+        \begin{align*}
+        C_q^s(10\,950) &= 100\,000 \times \left(1 + \frac{0,05}{365} \times 10\,950\right) \\
+                &= 100\,000 \times (1 + 1,5) \\
+                 &= 100\,000 \times 2,5 \\
+                 &= \boxed{250\,000,00\ \text{€}}
+        \end{align*}
+        
+    \end{enumerate}
+
+    \item \textbf{Actif \( A_a^s \) (capitalisation annuelle avec intérêts simples)} : 
+    \[
+    C_a^s(t) = 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{t}{365} \right\rfloor \right)
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item \( t = 1 \) jour : 
+        \begin{align*}
+        C_a^s(1) &= 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{1}{365} \right\rfloor \right) \\
+                 &= 100\,000 \times \left(1 + 0,05 \times 0 \right) \\
+                 &= 100\,000 \times (1 + 0) \\
+                 &= 100\,000 \times 1 \\
+                 &= \boxed{100\,000\ \text{€}}
+        \end{align*}
+        
+        \item \( t = 30 \) jours : 
+        \begin{align*}
+        C_a^s(30) &= 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{30}{365} \right\rfloor \right) \\
+                 &= 100\,000 \times \left(1 + 0,05 \times 0 \right) \\
+                 &= \boxed{100\,000\ \text{€}}
+        \end{align*}
+        
+        \item $t = 1\ \text{an} = 365\ \text{jours}$~: 
+        \begin{align*}
+        C_a^s(365) &= 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{365}{365} \right\rfloor \right) \\
+                 &= 100\,000 \times \left(1 + 0,05 \times 1 \right) \\
+                 &= 100\,000 \times \left(1 + 0,05 \right) \\
+                 &= 100\,000 \times 1,05 \\
+                 &= \boxed{105\,000\ \text{€}}
+        \end{align*}
+        
+        \item $t = 30\ \text{ans} = 10\,950\ \text{jours}$~: 
+        \begin{align*}
+        C_a^s(10\,950) &= 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{10\,950}{365} \right\rfloor \right) \\
+                 &= 100\,000 \times \left(1 + 0,05 \times 30 \right) \\
+                 &= 100\,000 \times \left(1 + 1,5 \right) \\
+                 &= 100\,000 \times 2,5 \\
+                 &= \boxed{205\,000\ \text{€}}
+        \end{align*}
+    \end{enumerate}
+
+    \item \textbf{Tableau récapitulatif} :\\
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Actif} & \textbf{1 jour} & \textbf{30 jours} & \textbf{1 an} & \textbf{30 ans} \\
+        \hline
+        \( A_q^s \) & 100\,013,70\ € & 100\,410,96\ € & 105\,000,00\ € & 250\,000,00\ € \\
+        \hline
+        \( A_a^s \) & 100\,000,00\ € & 100\,000,00\ € & 105\,000,00\ € & 250\,000,00\ € \\
+        \hline
+        \end{tabular}
+        \caption{Résultats pour les intérêts simples (\( C_0 = 100\,000\ \text{€} \)).}
+        \label{tab:simple_interest_results}
+    \end{table}
+
+    \item \textbf{Fonctions de capitalisation} :
+    \begin{enumerate}[label=(\alph*)]
+        \item \( C_q^s(t) = C_0 \times \left(1 + r_q \times t\right) \)
+        \item \( C_a^s(t) = C_0 \times \left(1 + r_a \times \left\lfloor\frac{t}{365}\right\rfloor\right) \)
+    \end{enumerate}
+
+    \item \textbf{Visualisation graphique}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{interets_simples.png}
+        \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples.}
+        \label{fig:capitalisation}
+    \end{figure}
+
+    Le graphique représente six courbes correspondant aux fonctions :
+        \[
+            C_q^s(t) = C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right)
+        \]
+        et
+        \[
+        \begin{aligned}
+            C_a^s(t) &= C_0 \times \left(1 + 0{,}05 \times \left\lfloor\frac{t}{365}\right\rfloor\right) \\
+                     &= C_0 \times \left(1 + 0{,}05 \times \frac{t - (t \!\!\!\mod 365)}{365}\right),
+        \end{aligned}
+        \]
+        avec \( C_0 \in \bigl\{50\,000,\ 100\,000,\ 200\,000\bigr\}\,\text{€} \).
+
+    Axes :
+    \begin{itemize}
+        \item L'axe des abscisses (horizontal) représente la durée en jours.
+        \item L'axe des ordonnées (vertical) représente le capital en euros.
+    \end{itemize}
+
+    Comparaison :
+    \begin{itemize}
+        \item Les courbes de capitalisation quotidienne $C_q^s(t)$ montrent une croissance linéaire continue.
+        \item Les courbes de capitalisation annuelle $C_a^s(t)$ présentent une fonction en escalier avec des sauts discrets à chaque année, où chaque saut suit une croissance linéaire, reflétant une augmentation constante et régulière du capital.
+        \item Lorsqu'une année est révolue, les deux types de capitalisation convergent, car les intérêts annuels sont ajoutés.
+    \end{itemize}
+\end{enumerate}
 
 
 \section{Prochaine étape}  
