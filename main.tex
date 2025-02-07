@@ -43,10 +43,10 @@ L'objectif consiste à fournir une compréhension approfondie des mécanismes in
 \section{Méthode}
 L'approche adoptée pour atteindre l'objectif se décline en quatre étapes :
 \begin{enumerate}
-    \item Mise en évidence des limites de la méthode de calcul des intérêts simples ;
-    \item Intégration des intérêts composés dans l'évaluation du rendement ;
-    \item Démonstration, par développement binomial, de la supériorité des intérêts composés ;
-    \item Déduction de la formule du taux effectif annuel (TEA).
+    \item calcul du capital final pour les actifs à intérêts simples ;
+    \item prise en compte des intérêts composés dans l’analyse comparative ;
+    \item démonstration de la supériorité des intérêts composés par développement binomial ;
+    \item établissement de la formule du taux effectif annuel (TEA).
 \end{enumerate}
 
 Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'investissement d'un capital initial de \( C_0 = 100\,000\ \text{€} \), réparti sur quatre actifs décrits dans le tableau~\ref{tab:scenarios}.
@@ -79,6 +79,7 @@ Les conditions suivantes sont posées :
     \item Aucun frais ni taxe n'est appliqué.
     \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial \( C_0 \) est investi).
     \item Le taux de rendement est constant dans le temps.
+    \item L'inflation est supposée nulle ou négligeable.
 \end{itemize}
 
 \subsection{Questions}
