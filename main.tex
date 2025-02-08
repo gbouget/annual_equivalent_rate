@@ -18,9 +18,9 @@
 \usepackage{array}
 \usepackage{mdframed}
 \usepackage{enumitem}
-\usepackage{tcolorbox} % Pour les boîtes colorées
-\usepackage{fontawesome5} % Pour les icônes
-\usepackage{xcolor} % Pour les couleurs
+\usepackage{tcolorbox}
+\usepackage{fontawesome5} % icônes
+\usepackage{xcolor}
 
 \definecolor{lightgreen}{RGB}{230, 255, 230}
 
@@ -108,7 +108,7 @@ Les conditions suivantes sont posées :
         \begin{itemize}
             \item \( C^{\text{simple}}(t) \) est le capital accumulé après une période \( t \).
             \item \( C_0 \) est le capital initial investi.
-            \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient 0,05).
+            \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
             \item \( t \) est le temps écoulé, qui peut être exprimé en années ou en jours, selon la fréquence de capitalisation.
         \end{itemize}
     \end{tcolorbox}
@@ -156,7 +156,7 @@ Les conditions suivantes sont posées :
 
     \item Pour les trois valeurs de capital initial \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€, déterminer graphiquement le capital final obtenu pour des durées d'investissement \( t \) égales à 10 ans, 20 ans et 30 ans. Quel est le coefficient multiplicateur du capital initial en fonction de ces durées ?
 
-    \item Exprimer le coefficient multiplicateur du capital initial en fonction de la durée d'investissement et du taux périodique.
+    \item Exprimer le coefficient multiplicateur \( k(t) \) du capital initial en fonction de la durée d'investissement \( t \) et du taux périodique \( r \). Vérifier la cohérence des résultats avec ceux obtenus graphiquement en appliquant la formule pour un taux de 5\,\% et des durées de 10, 20 et 30 ans.
 
     \item Tracer graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour les taux périodiques \( r_q \in \{5\%, 10\%, 100\%\} \).
 
@@ -168,7 +168,13 @@ Les conditions suivantes sont posées :
 
 \end{enumerate}
 
+
+
+
 \subsubsection*{Étape 2 : ajout des intérêts composés au comparatif}
+
+
+
 \subsubsection*{Étape 3 : démonstration par développement binomial}
 \subsubsection*{Étape 4 : détermination du taux effective annuel}
 
@@ -257,7 +263,7 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
         \end{align*}
     \end{enumerate}
 
-    \item \textbf{Tableau récapitulatif} :\\
+    \item Voir table \ref{tab:simple_interest_results}.
     \begin{table}[h!]
         \centering
         \begin{tabular}{|c|c|c|c|c|}
@@ -279,15 +285,7 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
         \item \( C_a^s(t) = C_0 \times \left(1 + r_a \times \left\lfloor\frac{t}{365}\right\rfloor\right) \)
     \end{enumerate}
 
-    \item \textbf{Visualisation graphique}
-    \begin{figure}[h!]
-        \centering
-        \includegraphics[width=\textwidth]{interets_simples.png}
-        \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples.}
-        \label{fig:capitalisation}
-    \end{figure}
-
-    Le graphique représente six courbes correspondant aux fonctions :
+    \item Le graphique en figure \ref{fig:interets_simples} représente six courbes correspondant aux fonctions :
         \[
             C_q^s(t) = C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right)
         \]
@@ -312,6 +310,62 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
         \item Les courbes de capitalisation annuelle $C_a^s(t)$ présentent une fonction en escalier avec des sauts discrets à chaque année, où chaque saut suit une croissance linéaire, reflétant une augmentation constante et régulière du capital.
         \item Lorsqu'une année est révolue, les deux types de capitalisation convergent, car les intérêts annuels sont ajoutés.
     \end{itemize}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{interets_simples.png}
+        \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples.}
+        \label{fig:interets_simples}
+    \end{figure}
+
+    \item Le capital final est lu graphiquement sur la figure \ref{fig:lecture_graphique_interets_simples}:
+        \begin{align*}
+            \begin{array}{rcl}
+                50\,000\,\text{€}  & \xrightarrow{\text{10 ans}} & 75\,000\,\text{€} \\
+                100\,000\,\text{€} & \xrightarrow{\text{10 ans}} & 150\,000\,\text{€} \\
+                200\,000\,\text{€} & \xrightarrow{\text{10 ans}} & 300\,000\,\text{€} \\
+                50\,000\,\text{€}  & \xrightarrow{\text{20 ans}} & 100\,000\,\text{€} \\
+                100\,000\,\text{€} & \xrightarrow{\text{20 ans}} & 200\,000\,\text{€} \\
+                200\,000\,\text{€} & \xrightarrow{\text{20 ans}} & 400\,000\,\text{€} \\
+                50\,000\,\text{€}  & \xrightarrow{\text{30 ans}} & 125\,000\,\text{€} \\
+                100\,000\,\text{€} & \xrightarrow{\text{30 ans}} & 250\,000\,\text{€} \\
+                200\,000\,\text{€} & \xrightarrow{\text{30 ans}} & 500\,000\,\text{€}
+            \end{array}
+            \qquad
+            \begin{array}{rrcl}
+                10 \text{ ans :} & \displaystyle \frac{75\,000}{50\,000}  & = \displaystyle \frac{150\,000}{100\,000} & = \displaystyle \frac{300\,000}{200\,000} = 1,5 \\[1em]
+                20 \text{ ans :} & \displaystyle \frac{100\,000}{50\,000} & = \displaystyle \frac{200\,000}{100\,000} & = \displaystyle \frac{400\,000}{200\,000} = 2 \\[1em]
+                30 \text{ ans :} & \displaystyle \frac{125\,000}{50\,000} & = \displaystyle \frac{250\,000}{100\,000} & = \displaystyle \frac{500\,000}{200\,000} = 2,5
+            \end{array}
+        \end{align*}
+
+        \begin{itemize}
+            \item Le capital initial est multiplié par 1,5 après 10 ans.
+            \item Le capital initial est multiplié par 2 après 20 ans.
+            \item Le capital initial est multiplié par 2,5 après 30 ans.
+        \end{itemize}
+    
+        \begin{figure}[h!]
+            \centering
+            \makebox[\textwidth][c]{\includegraphics[width=1.35\textwidth]{lecture_graphique_interets_simples.png}}
+            \caption{Lecture graphique du capital obtenu après 10, 20 et 30 ans d'investissement.}
+            \label{fig:lecture_graphique_interets_simples}
+        \end{figure}
+
+        % Exprimer le coefficient multiplicateur du capital initial en fonction de la durée d’investissement et du taux périodique.
+        \item Le coefficient multiplicateur du capital initial, noté \( k(t) \), représente le facteur par lequel le capital initial est multiplié pour obtenir le capital final après une certaine durée d'investissement \( t \), avec un taux périodique \( r_q \) (taux d'intérêt par période). Ainsi, le coefficient multiplicateur \( k(t) \) est le rapport entre le capital final \( C(t) \) et le capital initial \( C_0 \) :
+        \[
+        k(t) = \frac{C(t)}{C_0} = \frac{C_0 \left( 1 + r_q \cdot t \right)}{C_0} = 1 + r_q \cdot t = \boxed{1 + r_q \cdot t}
+        \]
+
+        Vérification :
+        \begin{itemize}
+            \item Pour 10 ans : $k(10) = 1 + 0,05 \times 10 = 1 + 0,5 = \boxed{1,5}$
+            \item Pour 20 ans : $k(20) = 1 + 0,05 \times 20 = 1 + 1 = \boxed{2}$
+            \item Pour 30 ans : $k(30) = 1 + 0,05 \times 30 = 1 + 2,5 = \boxed{2,5}$
+        \end{itemize}
+
+    
 \end{enumerate}
 
 
