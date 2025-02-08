@@ -158,9 +158,9 @@ Les conditions suivantes sont posées :
 
     \item Exprimer le coefficient multiplicateur \( k(t) \) du capital initial en fonction de la durée d'investissement \( t \) et du taux périodique \( r \). Vérifier la cohérence des résultats avec ceux obtenus graphiquement en appliquant la formule pour un taux de 5\,\% et des durées de 10, 20 et 30 ans.
 
-    \item Tracer graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour les taux périodiques \( r_q \in \{5\%, 10\%, 100\%\} \).
+    \item Tracer graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d'investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
 
-    \item Relever graphiquement le coefficient multiplicateur pour les durées d'investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans avec les taux périodiques \( r_q \in \{5\%, 10\%, 100\%\} \).
+    \item Utiliser les valeurs du coefficient multiplicateur obtenues graphiquement pour déterminer le capital final après 10 ans, 20 ans, 30 ans, 50 ans et 100 ans, en partant d'un capital initial de $72\,924,56$\ € et avec un taux périodique de 5\%.
 
     \item Calculer numériquement le coefficient directeur des droites \( C^s_q \) en utilisant les points d'abscisse suivants : \( (0; 1) \), \( (0; 1\,825) \), \( (7\,300; 10\,950) \) et \( (0; 365\,000) \). En déduire la formule générale du coefficient directeur en fonction du capital initial et du taux périodique.
 
@@ -178,7 +178,7 @@ Les conditions suivantes sont posées :
 \subsubsection*{Étape 3 : démonstration par développement binomial}
 \subsubsection*{Étape 4 : détermination du taux effective annuel}
 
-
+\newpage
 \section{Solution}
 \subsection*{Étape 1 : calcul du capital final pour les actifs à intérêts simples}
 
@@ -365,9 +365,32 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
             \item Pour 30 ans : $k(30) = 1 + 0,05 \times 30 = 1 + 2,5 = \boxed{2,5}$
         \end{itemize}
 
+    \item Voir figure \ref{fig:coefficient_multiplicateur}.
+        \begin{figure}[h!]
+            \centering
+            \makebox[\textwidth][c]{\includegraphics[width=1.35\textwidth]{coefficient_multiplicateur.png}}
+            \caption{Coefficient multiplicateur du capital initial en fonction de la durée \( t \) (en années) pour un taux périodique de 5\% : \( k(t) = 1 + 0,05 \times t \)}
+            \label{fig:coefficient_multiplicateur}
+        \end{figure}
+
+        \begin{itemize}
+            \item $k(10) = 1,5$
+            \item $k(20) = 2$
+            \item $k(30) = 2,5$
+            \item $k(50) = 3,5$
+            \item $k(100) = 6$
+        \end{itemize}
+
+    \item Pour un capital initial de \( 72\,924,\!56\ \text{€} \) à \( 5\,\% \) annuel en intérêts simples :
+    \begin{align*}
+        C^s(10)  &= 72\,924,\!56 \times 1,\!5   = 109\,386,\!84\ \text{€} \\[0.4em]
+        C^s(20)  &= 72\,924,\!56 \times 2,\!0   = 145\,849,\!12\ \text{€} \\[0.4em]
+        C^s(30)  &= 72\,924,\!56 \times 2,\!5   = 182\,311,\!40\ \text{€} \\[0.4em]
+        C^s(50)  &= 72\,924,\!56 \times 3,\!5   = 255\,235,\!96\ \text{€} \\[0.4em]
+        C^s(100) &= 72\,924,\!56 \times 6,\!0   = 437\,547,\!36\ \text{€}
+    \end{align*}
     
 \end{enumerate}
-
 
 \section{Prochaine étape}  
 Développer un programme de simulation permettant de modéliser l'évolution du capital en fonction du montant investi, du taux de rendement, de la fréquence de capitalisation des intérêts et de la durée d'investissement. Le programme devra également calculer et afficher le taux d'intérêt effectif.  
