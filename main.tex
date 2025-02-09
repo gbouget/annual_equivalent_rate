@@ -21,6 +21,7 @@
 \usepackage{tcolorbox}
 \usepackage{fontawesome5} % icônes
 \usepackage{xcolor}
+\usepackage{cancel} % trait diagonal pour barrer les expressions
 
 \definecolor{lightgreen}{RGB}{230, 255, 230}
 
@@ -158,25 +159,56 @@ Les conditions suivantes sont posées :
 
     \item Exprimer le coefficient multiplicateur \( k(t) \) du capital initial en fonction de la durée d'investissement \( t \) et du taux périodique \( r \). Vérifier la cohérence des résultats avec ceux obtenus graphiquement en appliquant la formule pour un taux de 5\,\% et des durées de 10, 20 et 30 ans.
 
-    \item Tracer graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d'investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
+    \item Représenter graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d'investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
 
     \item Utiliser les valeurs du coefficient multiplicateur obtenues graphiquement pour déterminer le capital final après 10 ans, 20 ans, 30 ans, 50 ans et 100 ans, en partant d'un capital initial de $72\,924,56$\ € et avec un taux périodique de 5\%.
 
-    \item Calculer numériquement le coefficient directeur des droites \( C^s_q \) en utilisant les points d'abscisse suivants : \( (0; 1) \), \( (0; 1\,825) \), \( (7\,300; 10\,950) \) et \( (0; 365\,000) \). En déduire la formule générale du coefficient directeur en fonction du capital initial et du taux périodique.
+    \item Calculer le coefficient directeur des droites \( C^s_q \) avec \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€ en utilisant les points d'abscisse suivants :
+    \begin{itemize}
+        \item \( x_a = 0 \) et \( x_b = 1 \) ;
+        \item \( x_a = 32 \) et \( x_b = 1\,946 \) ;
+        \item \( x_a = 364\,999 \) et \( x_b = 365\,000 \).
+    \end{itemize}
+    \begin{tcolorbox}[
+        colback=lightgreen,
+        colframe=lightgreen,
+        boxrule=0.5pt,
+        arc=0pt,
+        left=10pt,
+        right=10pt,
+        top=6pt,
+        bottom=6pt,
+        boxsep=2pt,
+        before upper={\faLightbulb\hspace{10pt}}
+    ]
+        La pente d'une droite, également appelée coefficient directeur, mesure la variation verticale (changement en \( y \)) par rapport à la variation horizontale (changement en \( x \)). Elle indique la direction et l'inclinaison de la droite.
+    
+        \textbf{Formule générale :}
+    
+        \[
+            m = \frac{\Delta y}{\Delta x} = \frac{C(x_b) - C(x_a)}{x_b - x_a}\,,
+        \]
+    
+        où \( m \) est le coefficient directeur, \( C(x_a) \) et \( C(x_b) \) sont les valeurs de la fonction \( C \) aux points \( x_a \) et \( x_b \), respectivement.
+    \end{tcolorbox}
 
-    \item Interpréter financièrement le coefficient directeur calculé précédemment. Quelle est l'implication du fait que ce coefficient reste constant dans le temps dans le contexte des intérêts simples ?
+    \item Interpréter financièrement le coefficient directeur.
+
+    \item À partir de la formule générale du coefficient directeur, expliquer comment la pente \( m \) de la fonction \( C_q^s(t) = C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right) \) peut être simplifiée pour obtenir l'expression \( m = C_0 \times r \), où \( r \) est le rendement périodique quotidien, soit \( r = \frac{0{,}05}{365} \).
+
+    \item Quelle est la signification du caractère constant du coefficient directeur dans le cas des intérêts simples ?
+
+    \item Donner quelques exemples de situations de la vie courante où les intérêts sont simples.
+
+    \item Quel est l'effet de l'inflation et de la déflation sur le rendement ? Prendre en compte l'objectif de la Banque Centrale Européenne (BCE).
+
+    \item Que se passe-t-il si les intérêts perçus sont réinvestis dans un actif financier ?
 
 \end{enumerate}
 
-
-
-
-\subsubsection*{Étape 2 : ajout des intérêts composés au comparatif}
-
-
-
-\subsubsection*{Étape 3 : démonstration par développement binomial}
-\subsubsection*{Étape 4 : détermination du taux effective annuel}
+%\subsubsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
+%\subsubsection*{Étape 3 : démonstration par développement binomial}
+%\subsubsection*{Étape 4 : détermination du taux effective annuel}
 
 \newpage
 \section{Solution}
@@ -389,10 +421,155 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
         C^s(50)  &= 72\,924,\!56 \times 3,\!5   = 255\,235,\!96\ \text{€} \\[0.4em]
         C^s(100) &= 72\,924,\!56 \times 6,\!0   = 437\,547,\!36\ \text{€}
     \end{align*}
+
+    \item Étant donné la formule pour \( C_q^s(t) \) :
+
+    \[
+    C_q^s(t) = C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right)\,,
+    \]
+
+    \begin{itemize}
+        \item Pour \( C_0 = 50\,000 \) € :
+        \[
+            \begin{aligned}
+            m &= \frac{C^s_q(1) - C^s_q(0)}{1 - 0} \\
+              &= \frac{50\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\right) - 50\,000}{1} \\
+              &\approx 50\,006{,}849 - 50\,000 \\
+              &\approx 6{,}85\ \text{€} \\[1em]
+            m &= \frac{C^s_q(1\,948) - C^s_q(32)}{1\,948 - 32} \\
+              &= \frac{50\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\,948\right) - 50\,000 \times \left(1 + \frac{0{,}05}{365} \times 32\right)}{1\,916} \\
+              &\approx \frac{63\,342{,}46575 - 50\,219{,}17808}{1\,916} \\
+              &\approx \frac{13\,123{,}28767}{1\,916} \\
+              &\approx 6{,}85\ \text{€} \\[1em]
+            m &= \frac{C^s_q(365\,000) - C^s_q(364\,999)}{365\,000 - 364\,999} \\
+              &= \frac{50\,000 \times \left(1 + \frac{0{,}05}{365} \times 365\,000\right) - 50\,000 \times \left(1 + \frac{0{,}05}{365} \times 364\,999\right)}{1} \\
+              &\approx 2\,550\,000 - 2\,549\,993,15068 \\
+              &\approx 6{,}85\ \text{€}
+            \end{aligned}
+        \]
+    
+        \item Pour \( C_0 = 100\,000 \) € :
+        \[
+            \begin{aligned}
+            m &= \frac{C^s_q(1) - C^s_q(0)}{1 - 0} \\
+              &= \frac{100\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\right) - 100\,000}{1} \\
+              &\approx 100\,013{,}698 - 100\,000 \\
+              &\approx 13{,}70\ \text{€} \\[1em]
+            m &= \frac{C^s_q(1\,948) - C^s_q(32)}{1\,948 - 32} \\
+              &= \frac{100\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\,948\right) - 100\,000 \times \left(1 + \frac{0{,}05}{365} \times 32\right)}{1\,916} \\
+              &\approx \frac{126\,684{,}9315 - 100\,438{,}35616}{1\,916} \\
+              &\approx \frac{26\,246{,}57534}{1\,916} \\
+              &\approx 13{,}70\ \text{€} \\[1em]
+            m &= \frac{C^s_q(365\,000) - C^s_q(364\,999)}{365\,000 - 364\,999} \\
+              &= \frac{100\,000 \times \left(1 + \frac{0{,}05}{365} \times 365\,000\right) - 100\,000 \times \left(1 + \frac{0{,}05}{365} \times 364\,999\right)}{1} \\
+              &\approx 5\,100\,000 - 5\,099\,986,30136 \\
+              &\approx 13{,}70\ \text{€}
+            \end{aligned}
+        \]
+    
+        \item Pour \( C_0 = 200\,000 \) € :
+        \[
+            \begin{aligned}
+            m &= \frac{C^s_q(1) - C^s_q(0)}{1 - 0} \\
+              &= \frac{200\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\right) - 200\,000}{1} \\
+              &\approx 200\,027{,}397 - 200\,000 \\
+              &\approx 27{,}40\ \text{€} \\[1em]
+            m &= \frac{C^s_q(1\,948) - C^s_q(32)}{1\,948 - 32} \\
+              &= \frac{200\,000 \times \left(1 + \frac{0{,}05}{365} \times 1\,948\right) - 200\,000 \times \left(1 + \frac{0{,}05}{365} \times 32\right)}{1\,916} \\
+              &\approx \frac{253\,369{,}863 - 200\,876{,}71232}{1\,916} \\
+              &\approx \frac{52\,493{,}15068}{1\,916} \\
+              &\approx 27{,}40\ \text{€} \\[1em]
+            m &= \frac{C^s_q(365\,000) - C^s_q(364\,999)}{365\,000 - 364\,999} \\
+              &= \frac{200\,000 \times \left(1 + \frac{0{,}05}{365} \times 365\,000\right) - 200\,000 \times \left(1 + \frac{0{,}05}{365} \times 364\,999\right)}{1} \\
+              &\approx 10\,200\,000 - 10\,199\,972,60272 \\
+              &\approx 27{,}40\ \text{€}
+            \end{aligned}
+        \]
+    \end{itemize}
+
+    \item Le coefficient directeur représente le montant des intérêts gagnés chaque jour.
+
+    \item Le coefficient directeur \( m \) d'une droite entre deux points \((x_a, C_q^s(x_a))\) et \((x_b, C_q^s(x_b))\) est donné par :
+    
+    \[
+    m = \frac{C_q^s(x_b) - C_q^s(x_a)}{x_b - x_a}
+    \]
+    
+    La fonction \( C_q^s(t) \) est définie comme :
+    
+    \[
+    C_q^s(t) = C_0 \times \left(1 + r \times t\right)
+    \]
+        
+    Substitution de \( C_q^s(x_b) \) et \( C_q^s(x_a) \) dans la formule du coefficient directeur :
+    
+    \[
+    m = \frac{C_0 \times \left(1 + r \times x_b\right) - C_0 \times \left(1 + r \times x_a\right)}{x_b - x_a}
+    \]
+    
+    Développement des termes du numérateur selon l'identité $a \times (b + c) = a \times b + a \times c$ :
+
+     \[
+        m = \frac{\overset{a}{\overbrace{C_0}} \times (\overset{b}{\overbrace{1}} + \overset{c}{\overbrace{r \times x_b}}) - C_0 \times (1 + r \times x_a)}{x_b - x_a}
+    \]
+
+    \[
+        m = \frac{C_0 + C_0 \times r \times x_b - \overset{a}{\overbrace{C_0}} \times (\overset{b}{\overbrace{1}} + \overset{c}{\overbrace{r \times x_a}})}{x_b - x_a}
+    \]
+    
+    \[
+        m = \frac{C_0 + C_0 \times r \times x_b - C_0 - C_0 \times r \times x_a}{x_b - x_a}
+    \]
+    
+    Les termes \( C_0 \) sont constants et s'annulent :
+
+    \[
+         m = \frac{\cancel{C_0} + C_0 \times r \times x_b \cancel{- C_0} - C_0 \times r \times x_a}{x_b - x_a}
+    \]
+    
+    \[
+        m = \frac{C_0 \times r \times x_b - C_0 \times r \times x_a}{x_b - x_a}
+    \]
+    
+    Factorisation de $(C_0 \times r)$ selon l'identité $a \times b - a \times c = a \times (b-c)$ :
+
+    \[
+        m = \frac{\overset{a}{\overbrace{C_0 \times r}} \times \overset{b}{\overbrace{x_b}} - \overset{a}{\overbrace{C_0 \times r}} \times \overset{c}{\overbrace{x_a}}}{x_b - x_a}
+    \]
+    
+    \[
+        m = \frac{\overset{a}{\overbrace{C_0 \times r}} \times (\overset{b}{\overbrace{x_b}} - \overset{c}{\overbrace{x_a}})}{x_b - x_a}
+    \]
+
+    \[
+        m = C_0 \times r \times \frac{x_b - x_a}{x_b - x_a}
+    \]
+    
+    Puisque $\frac{x_b - x_a}{x_b - x_a} = 1$ pour $x_b - x_a \neq 0$ :
+    \[
+        \boxed{m = C_0 \times r}
+    \]
+    
+    Le coefficient directeur \( m \) est donc constant et égal à \( C_0 \times r \), où \( r \) est le rendement périodique quotidien. Cela montre que le coefficient directeur est proportionnel au capital initial et au rendement périodique, indépendamment des points \( x_a \) et \( x_b \) choisis.
+
+    \item Le coefficient directeur constant traduit une croissance linéaire du capital dû au versement des intérêts d'un montant fixe. Graphiquement, la fonction forme une droite, avec une pente représentant le gain périodique. Cette linéarité garantit une prévisibilité totale, mais limite la rentabilité sur le long terme (pas d’effet de capitalisation).
+
+    \item Exemples de dispositifs avec des intérêts simples :
+    \begin{itemize}
+        \item Crédit immobilier ou à la consommation (les intérêts  sont calculés sur le capital restant dû).
+        \item Obligation à taux fixe sans réinvestissement des coupons
+    \end{itemize}
+
+    \item En période d'inflation, les intérêts perdent de la valeur réelle car le montant est grignoté par la hausse globale des prix. À l’inverse, en déflation, ces mêmes intérêts gagnent en pouvoir d’achat grâce à la baisse générale des prix. 
+
+    La BCE vise une inflation cible de \( 2\% \), un équilibre permettant d’éviter les excès déflationnistes tout en limitant l’érosion des rendements. Cependant, même une inflation modérée agit avec un effet boule de neige : l’augmentation lente mais cumulée des prix, année après année, ronge progressivement la valeur réelle des intérêts simples, dont le montant reste constant.
+
+    Contrairement aux intérêts composés, où les gains capitalisés atténuent l’effet de l’inflation, les intérêts simples, linéaires et non réinvestis, ne bénéficient pas d’un "effet boule de neige" compensatoire. La politique de la BCE renforce ainsi la nécessité de pondérer ces produits dans une stratégie diversifiée face à l’inflation.
+
+    \item Si les intérêts perçus sont réinvestis dans un actif financier, alors ils vont générer à leur tour des intérêts. Ce mécanisme, appelé capitalisation des intérêts, consiste à intégrer les gains au capital pour augmenter la base de calcul des futurs intérêts et générer une croissance exponentielle du rendement.
     
 \end{enumerate}
 
-\section{Prochaine étape}  
-Développer un programme de simulation permettant de modéliser l'évolution du capital en fonction du montant investi, du taux de rendement, de la fréquence de capitalisation des intérêts et de la durée d'investissement. Le programme devra également calculer et afficher le taux d'intérêt effectif.  
+%\subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
 
 \end{document}
