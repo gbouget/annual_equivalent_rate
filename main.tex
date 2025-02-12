@@ -71,7 +71,7 @@ Afin de faciliter les applications numériques avant de généraliser, l'analyse
 \label{tab:scenarios}
 \end{table}
 
-Chaque étape de l'analyse sera ensuite détaillée à travers une série de questions destinées à approfondir la compréhension du phénomène.
+Chaque étape est constituée d'une série de questions pour progresser pas à pas.
 
 \subsection{Hypothèses de travail}
 Les conditions suivantes sont posées :
@@ -81,7 +81,6 @@ Les conditions suivantes sont posées :
     \item Aucun frais ni taxe n'est appliqué.
     \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial \( C_0 \) est investi).
     \item Le taux de rendement est constant dans le temps.
-    \item L'inflation n'est pas prise en compte.
 \end{itemize}
 
 \subsection{Questions}
@@ -222,7 +221,7 @@ C(t) = C_0 \times \left(1 + r \times t\right)
 où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( t \) la durée exprimée en jours.
 
 \begin{enumerate}[label=\textbf{Q\arabic*.}]
-    \item \textbf{Actif \( A_q^s \) (capitalisation quotidienne avec intérêts simples)} : 
+    \item \textbf{Actif \( A_q^s \) (capitalisation quotidienne avec intérêts simples)}
     \[
     C_q^s(t) = 100\,000 \times \left(1 + \frac{0,05}{365} \times t\right)
     \]
@@ -255,7 +254,8 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
         
     \end{enumerate}
 
-    \item \textbf{Actif \( A_a^s \) (capitalisation annuelle avec intérêts simples)} : 
+    \item \textbf{Actif \( A_a^s \) (capitalisation annuelle avec intérêts simples)} \\
+    Puisque les intérêts ne sont ajoutés que si le capital reste investi pendant une année complète (365 jours), la fonction \emph{partie entière}, notée $\lfloor \cdot \rfloor$, est utilisée pour modéliser cette condition.
     \[
     C_a^s(t) = 100\,000 \times \left(1 + 0,05 \times \left\lfloor \frac{t}{365} \right\rfloor \right)
     \]
@@ -557,16 +557,14 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
     \item Exemples de dispositifs avec des intérêts simples :
     \begin{itemize}
         \item Crédit immobilier ou à la consommation (les intérêts  sont calculés sur le capital restant dû).
-        \item Obligation à taux fixe sans réinvestissement des coupons
+        \item Obligation à taux fixe sans réinvestissement des coupons.
     \end{itemize}
 
     \item En période d'inflation, les intérêts perdent de la valeur réelle car le montant est grignoté par la hausse globale des prix. À l’inverse, en déflation, ces mêmes intérêts gagnent en pouvoir d’achat grâce à la baisse générale des prix. 
 
     La BCE vise une inflation cible de \( 2\% \), un équilibre permettant d’éviter les excès déflationnistes tout en limitant l’érosion des rendements. Cependant, même une inflation modérée agit avec un effet boule de neige : l’augmentation lente mais cumulée des prix, année après année, ronge progressivement la valeur réelle des intérêts simples, dont le montant reste constant.
 
-    Contrairement aux intérêts composés, où les gains capitalisés atténuent l’effet de l’inflation, les intérêts simples, linéaires et non réinvestis, ne bénéficient pas d’un "effet boule de neige" compensatoire. La politique de la BCE renforce ainsi la nécessité de pondérer ces produits dans une stratégie diversifiée face à l’inflation.
-
-    \item Si les intérêts perçus sont réinvestis dans un actif financier, alors ils vont générer à leur tour des intérêts. Ce mécanisme, appelé capitalisation des intérêts, consiste à intégrer les gains au capital pour augmenter la base de calcul des futurs intérêts et générer une croissance exponentielle du rendement.
+    \item Lorsque les intérêts générés sont réinvestis dans un actif financier, ils produisent à leur tour des intérêts. Ce mécanisme, appelé capitalisation des intérêts ou intérêts composés, consiste à incorporer les gains au capital initial, ce qui augmente progressivement la base de calcul des futurs intérêts et engendre une croissance exponentielle du rendement.
     
 \end{enumerate}
 
