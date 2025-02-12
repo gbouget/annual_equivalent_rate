@@ -568,6 +568,57 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
     
 \end{enumerate}
 
-%\subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
+\subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
+\begin{tcolorbox}[
+    colback=lightgreen, 
+    colframe=lightgreen, 
+    boxrule=0.5pt, 
+    arc=0pt, 
+    left=10pt, 
+    right=10pt, 
+    top=6pt, 
+    bottom=6pt, 
+    boxsep=2pt, 
+    before upper={\faLightbulb\hspace{10pt}}
+]
+    Les intérêts composés sont calculés sur le capital initial, auquel s'ajoutent progressivement les intérêts accumulés :
+    
+
+    \[
+    C^{\text{composé}}(t) = C_0 \times (1 + r)^t
+    \]
+    
+    où :
+    \begin{itemize}
+        \item \( C^{\text{composé}}(t) \) est le capital accumulé après une période \( t \).
+        \item \( C_0 \) est le capital initial investi.
+        \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
+        \item \( t \) est le temps écoulé, exprimé en années ou en jours, selon la fréquence de capitalisation.
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    colback=lightgreen, 
+    colframe=lightgreen, 
+    boxrule=0.5pt, 
+    arc=0pt, 
+    left=10pt, 
+    right=10pt, 
+    top=6pt, 
+    bottom=6pt, 
+    boxsep=2pt, 
+    before upper={\faLightbulb\hspace{10pt}}
+]
+    Le calcul des intérêts composés est modélisé par une fonction exponentielle, notée sous la forme $f(x)=a^x$, où $a$ est une constante positive et $x$ correspond au temps ou au nombre de périodes de capitalisation.
+
+    À l'inverse, une fonction puissance, exprimée par $f(x)=x^a$, caractérise une croissance polynomiale. La fonction exponentielle surpasse en vitesse la fonction puissance, ce qui met en évidence le phénomène d'effet boule de neige des intérêts composés : les intérêts générés à chaque période s'ajoutent au capital, accélérant ainsi son expansion au cours du temps.
+
+    Moyen mnémotechnique : 
+    \begin{itemize}
+        \item Fonction \underline{expo}nent\underline{ie}l\underline{le} = l'\underline{expo}sant var\underline{ie}, la croissance s'embal\underline{le}.
+        \item Fonction puiss\underline{ance} = la puissance avec const\underline{ance}, pour une croissance en cad\underline{ence}.
+    \end{itemize}
+
+\end{tcolorbox}
 
 \end{document}
