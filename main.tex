@@ -87,33 +87,33 @@ Les conditions suivantes sont posées :
 \subsubsection*{Étape 1 : calcul du capital final pour les actifs à intérêts simples}
 
 \begin{tcolorbox}[
-        colback=lightgreen, 
-        colframe=lightgreen, 
-        boxrule=0.5pt, 
-        arc=0pt, 
-        left=10pt, 
-        right=10pt, 
-        top=6pt, 
-        bottom=6pt, 
-        boxsep=2pt, 
-        before upper={\faLightbulb\hspace{10pt}}
-    ]
-        Les intérêts simples sont calculés uniquement sur le capital initial, et le montant des intérêts gagnés chaque période est constant. La formule suivante reflète bien cette caractéristique, car le produit \( r \times t \) est simplement ajouté au capital initial :
+    colback=lightgreen, 
+    colframe=lightgreen, 
+    boxrule=0.5pt, 
+    arc=0pt, 
+    left=10pt, 
+    right=10pt, 
+    top=6pt, 
+    bottom=6pt, 
+    boxsep=2pt, 
+    before upper={\faLightbulb\hspace{10pt}}
+]
+    Les intérêts simples sont calculés uniquement sur le capital initial, et le montant des intérêts gagnés chaque période est constant. La formule suivante reflète bien cette caractéristique, car le produit \( r \times t \) est simplement ajouté au capital initial :
 
-        \[
-        C^{\text{simple}}(t) = C_0 \left(1 + r \times t\right)
-        \]
-        
-        où :
-        \begin{itemize}
-            \item \( C^{\text{simple}}(t) \) est le capital accumulé après une période \( t \).
-            \item \( C_0 \) est le capital initial investi.
-            \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
-            \item \( t \) est le temps écoulé, qui peut être exprimé en années ou en jours, selon la fréquence de capitalisation.
-        \end{itemize}
-    \end{tcolorbox}
+    \[
+    C^{\text{simple}}(t) = C_0 \left(1 + r \times t\right)
+    \]
+    
+    où :
+    \begin{itemize}
+        \item \( C^{\text{simple}}(t) \) est le capital accumulé après une période \( t \).
+        \item \( C_0 \) est le capital initial investi.
+        \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
+        \item \( t \) est le temps écoulé, qui peut être exprimé en années ou en jours, selon la fréquence de capitalisation.
+    \end{itemize}
+\end{tcolorbox}
 
-\begin{enumerate}[label=\textbf{Q\arabic*.}]
+\begin{enumerate}[label=\textbf{Q1.\arabic*}]
     \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_q^s \) après une durée \( t \) égale à :
     \begin{enumerate}[label=(\alph*)]
         \item \( t = 1 \) jour
@@ -203,11 +203,81 @@ Les conditions suivantes sont posées :
 
     \item Que se passe-t-il si les intérêts perçus sont réinvestis dans un actif financier ?
 
-\end{enumerate}
 
-%\subsubsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
-%\subsubsection*{Étape 3 : démonstration par développement binomial}
-%\subsubsection*{Étape 4 : détermination du taux effective annuel}
+    % ================================================================================
+    % ================================================================================
+    \subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
+    % ================================================================================
+\begin{tcolorbox}[
+    colback=lightgreen, 
+    colframe=lightgreen, 
+    boxrule=0.5pt, 
+    arc=0pt, 
+    left=10pt, 
+    right=10pt, 
+    top=6pt, 
+    bottom=6pt, 
+    boxsep=2pt, 
+    before upper={\faLightbulb\hspace{10pt}}
+]
+    Les intérêts composés sont calculés sur le capital initial, auquel s'ajoutent progressivement les intérêts accumulés :
+    
+
+    \[
+    C^{\text{composé}}(t) = C_0 \times (1 + r)^t
+    \]
+    
+    où :
+    \begin{itemize}
+        \item \( C^{\text{composé}}(t) \) est le capital accumulé après une période \( t \).
+        \item \( C_0 \) est le capital initial investi.
+        \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
+        \item \( t \) est le temps écoulé, exprimé en années ou en jours, selon la fréquence de capitalisation.
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    colback=lightgreen, 
+    colframe=lightgreen, 
+    boxrule=0.5pt, 
+    arc=0pt, 
+    left=10pt, 
+    right=10pt, 
+    top=6pt, 
+    bottom=6pt, 
+    boxsep=2pt, 
+    before upper={\faLightbulb\hspace{10pt}}
+]
+    Le calcul des intérêts composés est modélisé par une fonction exponentielle, notée sous la forme $f(x)=a^x$, où $a$ est une constante positive et $x$ correspond au temps ou au nombre de périodes de capitalisation.
+
+    À l'inverse, une fonction puissance, exprimée par $f(x)=x^a$, caractérise une croissance polynomiale. La fonction exponentielle surpasse en vitesse la fonction puissance, ce qui met en évidence le phénomène d'effet boule de neige des intérêts composés : les intérêts générés à chaque période s'ajoutent au capital, accélérant ainsi son expansion au cours du temps.
+
+    Moyen mnémotechnique : 
+    \begin{itemize}
+        \item Fonction \underline{expo}nent\underline{ie}l\underline{le} = l'\underline{expo}sant var\underline{ie}, la croissance s'embal\underline{le}.
+        \item Fonction puiss\underline{an}ce = la puissance est const\underline{an}te.
+    \end{itemize}
+\end{tcolorbox}
+
+    \begin{enumerate}[label=\textbf{Q2.\arabic*}]
+        \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_q^c \) après une durée \( t \) égale à :
+        \begin{enumerate}[label=(\alph*)]
+            \item \( t = 1 \) jour
+            \item \( t = 30 \) jours
+            \item \( t = 1 \) an
+            \item \( t = 30 \) ans
+        \end{enumerate}
+    
+        \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_a^q \) après une durée \( t \) égale à :
+        \begin{enumerate}[label=(\alph*)]
+            \item \( t = 1 \) jour
+            \item \( t = 30 \) jours
+            \item \( t = 1 \) an
+            \item \( t = 30 \) ans
+        \end{enumerate}
+    \end{enumerate}
+
+\end{enumerate}
 
 \newpage
 \section{Solution}
@@ -220,7 +290,7 @@ C(t) = C_0 \times \left(1 + r \times t\right)
 \]
 où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( t \) la durée exprimée en jours.
 
-\begin{enumerate}[label=\textbf{Q\arabic*.}]
+\begin{enumerate}[label=\textbf{R1.\arabic*}]
     \item \textbf{Actif \( A_q^s \) (capitalisation quotidienne avec intérêts simples)}
     \[
     C_q^s(t) = 100\,000 \times \left(1 + \frac{0,05}{365} \times t\right)
@@ -567,58 +637,5 @@ où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( 
     \item Lorsque les intérêts générés sont réinvestis dans un actif financier, ils produisent à leur tour des intérêts. Ce mécanisme, appelé capitalisation des intérêts ou intérêts composés, consiste à incorporer les gains au capital initial, ce qui augmente progressivement la base de calcul des futurs intérêts et engendre une croissance exponentielle du rendement.
     
 \end{enumerate}
-
-\subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
-\begin{tcolorbox}[
-    colback=lightgreen, 
-    colframe=lightgreen, 
-    boxrule=0.5pt, 
-    arc=0pt, 
-    left=10pt, 
-    right=10pt, 
-    top=6pt, 
-    bottom=6pt, 
-    boxsep=2pt, 
-    before upper={\faLightbulb\hspace{10pt}}
-]
-    Les intérêts composés sont calculés sur le capital initial, auquel s'ajoutent progressivement les intérêts accumulés :
-    
-
-    \[
-    C^{\text{composé}}(t) = C_0 \times (1 + r)^t
-    \]
-    
-    où :
-    \begin{itemize}
-        \item \( C^{\text{composé}}(t) \) est le capital accumulé après une période \( t \).
-        \item \( C_0 \) est le capital initial investi.
-        \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
-        \item \( t \) est le temps écoulé, exprimé en années ou en jours, selon la fréquence de capitalisation.
-    \end{itemize}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    colback=lightgreen, 
-    colframe=lightgreen, 
-    boxrule=0.5pt, 
-    arc=0pt, 
-    left=10pt, 
-    right=10pt, 
-    top=6pt, 
-    bottom=6pt, 
-    boxsep=2pt, 
-    before upper={\faLightbulb\hspace{10pt}}
-]
-    Le calcul des intérêts composés est modélisé par une fonction exponentielle, notée sous la forme $f(x)=a^x$, où $a$ est une constante positive et $x$ correspond au temps ou au nombre de périodes de capitalisation.
-
-    À l'inverse, une fonction puissance, exprimée par $f(x)=x^a$, caractérise une croissance polynomiale. La fonction exponentielle surpasse en vitesse la fonction puissance, ce qui met en évidence le phénomène d'effet boule de neige des intérêts composés : les intérêts générés à chaque période s'ajoutent au capital, accélérant ainsi son expansion au cours du temps.
-
-    Moyen mnémotechnique : 
-    \begin{itemize}
-        \item Fonction \underline{expo}nent\underline{ie}l\underline{le} = l'\underline{expo}sant var\underline{ie}, la croissance s'embal\underline{le}.
-        \item Fonction puiss\underline{an}ce = la puissance est const\underline{an}te.
-    \end{itemize}
-
-\end{tcolorbox}
 
 \end{document}
