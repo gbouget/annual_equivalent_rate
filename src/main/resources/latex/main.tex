@@ -48,6 +48,7 @@
     \item prise en compte des intérêts composés dans l’analyse comparative ;
     \item démonstration de la supériorité des intérêts composés par développement binomial ;
     \item établissement de la formule du taux effectif annuel (TEA).
+<<<<<<< HEAD
     \end{enumerate}
 
     Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'investissement d'un capital initial de \( C_0 = 100\,000\ \text{€} \), réparti sur quatre actifs décrits dans le tableau~\ref{tab:scenarios}.
@@ -306,6 +307,273 @@
 
                 \item Représenter graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d’investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d’investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
             \end{enumerate}
+=======
+\end{enumerate}
+
+Afin de faciliter les applications numériques avant de généraliser, l'analyse se concentre sur l'investissement d'un capital initial de \( C_0 = 100\,000\ \text{€} \), réparti sur quatre actifs décrits dans le tableau~\ref{tab:scenarios}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Actif} & \textbf{Type d'intérêt} & \textbf{Fréquence de capitalisation} & \textbf{Taux périodique}                \\
+        \hline
+        \(A_q^s\)      & Intérêts simples        & Quotidienne                           & \(r_\text{quotidien} = \frac{5}{365}\%\) \\
+        \hline
+        \(A_a^s\)      & Intérêts simples        & Annuelle                              & \(r_\text{annuel} = 5\%\)                \\
+        \hline
+        \(A_q^c\)      & Intérêts composés      & Quotidienne                           & \(r_\text{quotidien} = \frac{5}{365}\%\) \\
+        \hline
+        \(A_a^c\)      & Intérêts composés      & Annuelle                              & \(r_\text{annuel} = 5\%\)                \\
+        \hline
+    \end{tabular}
+    \caption{Scénarios d'investissement avec un capital initial \(C_0 = 100\,000\ \text{€}\).}
+    \label{tab:scenarios}
+\end{table}
+
+Chaque étape est constituée d'une série de questions pour progresser pas à pas.
+
+\subsection{Hypothèses de travail}
+Les conditions suivantes sont posées :
+\begin{itemize}
+    \item Les intérêts sont calculés selon la fréquence de capitalisation définie pour chaque actif. Aucune capitalisation intermédiaire ni prorata temporis ne s'applique en cas de retrait avant la fin de la période de capitalisation.
+    \item Une année est considérée comme comprenant 365 jours.
+    \item Aucun frais ni taxe n'est appliqué.
+    \item Aucun versement ou retrait supplémentaire n’est effectué durant la période d'investissement (seul le capital initial \( C_0 \) est investi).
+    \item Le taux de rendement est constant dans le temps.
+\end{itemize}
+
+\subsection{Questions}
+\subsubsection*{Étape 1 : calcul du capital final pour les actifs à intérêts simples}
+
+\begin{tcolorbox}[
+        colback=lightgreen, 
+        colframe=lightgreen, 
+        boxrule=0.5pt, 
+        arc=0pt, 
+        left=10pt, 
+        right=10pt, 
+        top=6pt, 
+        bottom=6pt, 
+        boxsep=2pt, 
+        before upper={\faLightbulb\hspace{10pt}}
+    ]
+    Les intérêts simples sont calculés uniquement sur le capital initial, et le montant des intérêts gagnés chaque période est constant. La formule suivante reflète bien cette caractéristique, car le produit \( r \times t \) est simplement ajouté au capital initial :
+    
+    \[
+        C^{\text{simple}}(t) = C_0 \left(1 + r \times t\right)
+    \]
+        
+    où :
+    \begin{itemize}
+        \item \( C^{\text{simple}}(t) \) est le capital accumulé après une période \( t \).
+        \item \( C_0 \) est le capital initial investi.
+        \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
+        \item \( t \) est le temps écoulé, qui peut être exprimé en années ou en jours, selon la fréquence de capitalisation.
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{enumerate}[label=\textbf{Q1.\arabic*}]
+    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_q^s \) après une durée \( t \) égale à :
+          \begin{enumerate}[label=(\alph*)]
+              \item \( t = 1 \) jour
+              \item \( t = 30 \) jours
+              \item \( t = 1 \) an
+              \item \( t = 30 \) ans
+          \end{enumerate}
+          
+    \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_a^s \) après une durée \( t \) égale à :
+          \begin{enumerate}[label=(\alph*)]
+              \item \( t = 1 \) jour
+              \item \( t = 30 \) jours
+              \item \( t = 1 \) an
+              \item \( t = 30 \) ans
+          \end{enumerate}
+              
+    \item Remplir le tableau suivant en calculant les capitaux finaux pour les deux types d'actifs à différents horizons de temps :\\
+          \begin{table}[h!]
+              \centering
+              \begin{tabular}{|c|c|c|c|c|}
+                  \hline
+                  \textbf{Actif} & \textbf{1 jour} & \textbf{30 jours} & \textbf{1 an} & \textbf{30 ans} \\
+                  \hline
+                  \( A_q^s \)    &                 &                   &               &                 \\
+                  \hline
+                  \( A_a^s \)    &                 &                   &               &                 \\
+                  \hline
+              \end{tabular}
+              \caption{Capital final pour différentes durées d'investissement avec intérêts simples et un capital initial de \( C_0 = 100\,000\ \text{€} \).}
+              \label{tab:simple_interest_results}
+          \end{table}
+          
+    \item Soit un capital initial \( C_0 \) et un taux nominal annuel \( r_a \) ou un taux nominal quotidien \( r_q \), exprimer les fonctions permettant de calculer le capital final en fonction de la durée d'investissement \( t \) (exprimée en jours) pour chacun des deux actifs à intérêts simples :
+          \begin{enumerate}[label=(\alph*)]
+              \item \( C^s_q(t) \) pour un actif à capitalisation quotidienne avec un taux périodique \( r_q \) ;
+              \item \( C^s_a(t) \) pour un actif à capitalisation annuelle avec un taux \( r_a \).
+          \end{enumerate}
+          
+    \item Tracer les courbes \( C^s_q(t) \) et \( C^s_a(t) \) pour \( C_0 \in \{50\,000, 100\,000, 200\,000\} \, \text{€} \). La durée \( t \) (en abscisse) varie de 0 à 40 ans. Commenter l'évolution du capital dans le temps en fonction des différents montants de capital initial.
+          
+    \item Pour les trois valeurs de capital initial \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€, déterminer graphiquement le capital final obtenu pour des durées d'investissement \( t \) égales à 10 ans, 20 ans et 30 ans. Quel est le coefficient multiplicateur du capital initial en fonction de ces durées ?
+          
+    \item Exprimer le coefficient multiplicateur \( k(t) \) du capital initial en fonction de la durée d'investissement \( t \) et du taux périodique \( r \). Vérifier la cohérence des résultats avec ceux obtenus graphiquement en appliquant la formule pour un taux de 5\,\% et des durées de 10, 20 et 30 ans.
+          
+    \item Représenter graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d'investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d'investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
+          
+    \item Utiliser les valeurs du coefficient multiplicateur obtenues graphiquement pour déterminer le capital final après 10 ans, 20 ans, 30 ans, 50 ans et 100 ans, en partant d'un capital initial de $72\,924,56$\ € et avec un taux périodique de 5\%.
+          
+    \item Calculer le coefficient directeur des droites \( C^s_q \) avec \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€ en utilisant les points d'abscisse suivants :
+          \begin{itemize}
+              \item \( x_a = 0 \) et \( x_b = 1 \) ;
+              \item \( x_a = 32 \) et \( x_b = 1\,946 \) ;
+              \item \( x_a = 364\,999 \) et \( x_b = 365\,000 \).
+          \end{itemize}
+          \begin{tcolorbox}[
+                  colback=lightgreen,
+                  colframe=lightgreen,
+                  boxrule=0.5pt,
+                  arc=0pt,
+                  left=10pt,
+                  right=10pt,
+                  top=6pt,
+                  bottom=6pt,
+                  boxsep=2pt,
+                  before upper={\faLightbulb\hspace{10pt}}
+              ]
+              La pente d'une droite, également appelée coefficient directeur, mesure la variation verticale (changement en \( y \)) par rapport à la variation horizontale (changement en \( x \)). Elle indique la direction et l'inclinaison de la droite.
+                  
+              \textbf{Formule générale :}
+                  
+              \[
+                  m = \frac{\Delta y}{\Delta x} = \frac{C(x_b) - C(x_a)}{x_b - x_a}\,,
+              \]
+                  
+              où \( m \) est le coefficient directeur, \( C(x_a) \) et \( C(x_b) \) sont les valeurs de la fonction \( C \) aux points \( x_a \) et \( x_b \), respectivement.
+          \end{tcolorbox}
+          
+    \item Interpréter financièrement le coefficient directeur.
+          
+    \item À partir de la formule générale du coefficient directeur, expliquer comment la pente \( m \) de la fonction \( C_q^s(t) = C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right) \) peut être simplifiée pour obtenir l'expression \( m = C_0 \times r \), où \( r \) est le rendement périodique quotidien, soit \( r = \frac{0{,}05}{365} \).
+          
+    \item Quelle est la signification du caractère constant du coefficient directeur dans le cas des intérêts simples ?
+          
+    \item Donner quelques exemples de situations de la vie courante où les intérêts sont simples.
+          
+    \item Quel est l'effet de l'inflation et de la déflation sur le rendement ? Prendre en compte l'objectif de la Banque Centrale Européenne (BCE).
+          
+    \item Que se passe-t-il si les intérêts perçus sont réinvestis dans un actif financier ?
+          
+          
+          % ================================================================================
+          % ================================================================================
+          \subsection*{Étape 2 : ajout des actifs à intérêts composés au comparatif}
+          % ================================================================================
+          \begin{tcolorbox}[
+                  colback=lightgreen, 
+                  colframe=lightgreen, 
+                  boxrule=0.5pt, 
+                  arc=0pt, 
+                  left=10pt, 
+                  right=10pt, 
+                  top=6pt, 
+                  bottom=6pt, 
+                  boxsep=2pt, 
+                  before upper={\faLightbulb\hspace{10pt}}
+              ]
+              Les intérêts composés sont calculés sur le capital initial, auquel s'ajoutent progressivement les intérêts accumulés :
+                  
+              
+              \[
+                  C^{\text{composé}}(t) = C_0 \times (1 + r)^t
+              \]
+                  
+              où :
+              \begin{itemize}
+                  \item \( C^{\text{composé}}(t) \) est le capital accumulé après une période \( t \).
+                  \item \( C_0 \) est le capital initial investi.
+                  \item \( r \) est le taux d'intérêt nominal (exprimé sous forme décimale, par exemple, 5\% devient $\frac{5}{100}$ soit 0,05).
+                  \item \( t \) est le temps écoulé, exprimé en années ou en jours, selon la fréquence de capitalisation.
+              \end{itemize}
+          \end{tcolorbox}
+          
+          \begin{tcolorbox}[
+                  colback=lightgreen, 
+                  colframe=lightgreen, 
+                  boxrule=0.5pt, 
+                  arc=0pt, 
+                  left=10pt, 
+                  right=10pt, 
+                  top=6pt, 
+                  bottom=6pt, 
+                  boxsep=2pt, 
+                  before upper={\faLightbulb\hspace{10pt}}
+              ]
+              Le calcul des intérêts composés est modélisé par une fonction exponentielle, notée sous la forme $f(x)=a^x$, où $a$ est une constante positive et $x$ correspond au temps ou au nombre de périodes de capitalisation.
+              
+              À l'inverse, une fonction puissance, exprimée par $f(x)=x^a$, caractérise une croissance polynomiale. La fonction exponentielle surpasse en vitesse la fonction puissance, ce qui met en évidence le phénomène d'effet boule de neige des intérêts composés : les intérêts générés à chaque période s'ajoutent au capital, accélérant ainsi son expansion au cours du temps.
+              
+              Moyen mnémotechnique : 
+              \begin{itemize}
+                  \item Fonction \underline{expo}nent\underline{ie}l\underline{le} = l'\underline{expo}sant var\underline{ie}, la croissance s'embal\underline{le}.
+                  \item Fonction puiss\underline{an}ce = la puissance est const\underline{an}te.
+              \end{itemize}
+          \end{tcolorbox}
+          
+          \begin{enumerate}[label=\textbf{Q2.\arabic*}]
+              \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_q^c \) après une durée \( t \) égale à :
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( t = 1 \) jour
+                        \item \( t = 30 \) jours
+                        \item \( t = 1 \) an
+                        \item \( t = 30 \) ans
+                    \end{enumerate}
+                        
+              \item Soit un capital initial \( C_0 = 100\,000\ \text{€} \) investi, calculer le capital final de l'actif \( A_a^q \) après une durée \( t \) égale à :
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( t = 1 \) jour
+                        \item \( t = 30 \) jours
+                        \item \( t = 1 \) an
+                        \item \( t = 30 \) ans
+                    \end{enumerate}
+                    
+                    
+              \item Remplir le tableau suivant en calculant les capitaux finaux pour les deux types d'actifs à différents horizons de temps :\\
+                    \begin{table}[h!]
+                        \centering
+                        \begin{tabular}{|c|c|c|c|c|}
+                            \hline
+                            \textbf{Actif} & \textbf{1 jour} & \textbf{30 jours} & \textbf{1 an} & \textbf{30 ans} \\
+                            \hline
+                            \( A_q^s \)    &                 &                   &               &                 \\
+                            \hline
+                            \( A_a^s \)    &                 &                   &               &                 \\
+                            \hline
+                            \( A_q^c \)    &                 &                   &               &                 \\
+                            \hline
+                            \( A_a^c \)    &                 &                   &               &                 \\
+                            \hline
+                        \end{tabular}
+                        \caption{Capital final pour différentes durées d'investissement avec intérêts composés et un capital initial de \( C_0 = 100\,000\ \text{€} \).}
+                        \label{tab:simple_interest_results}
+                    \end{table}
+                    
+              \item Soit un capital initial \( C_0 \) et un taux nominal annuel \( r_a \) ou un taux nominal quotidien \( r_q \), exprimer les fonctions permettant de calculer le capital final en fonction de la durée d'investissement \( t \) (exprimée en jours) pour chacun des deux actifs à intérêts composés :
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( C^c_q(t) \) pour un actif à capitalisation quotidienne avec un taux périodique \( r_q \) ;
+                        \item \( C^c_a(t) \) pour un actif à capitalisation annuelle avec un taux \( r_a \).
+                    \end{enumerate}
+                        
+              \item Sur le graphique des courbes $C^s_q$ et $C^s_q$, ajouter le tracé de \( C^c_q(t) \) et \( C^c_a(t) \) pour \( C_0 \in \{50\,000, 100\,000, 200\,000\} \, \text{€} \). La durée \( t \) (en abscisse) varie de 0 à 40 ans. Commenter l'évolution du capital dans le temps en fonction des différents montants de capital initial et du type d'actif.
+                        
+              \item Pour les trois valeurs de capital initial \( C_0 \in \{50\,000, 100\,000, 200\,000\} \)~€, déterminer graphiquement le capital final obtenu pour des durées d'investissement \( t \) égales à 10 ans, 20 ans et 30 ans. Quel est le coefficient multiplicateur du capital initial en fonction de ces durées ?
+
+              \item Exprimer le coefficient multiplicateur \( k(t) \) en fonction de la durée \( t \) et du taux périodique \( r \) dans le cas des intérêts composés. Vérifier la cohérence de ce résultat en appliquant la formule pour un taux de \( 5\,\% \) (c'est-à-dire \( r=0,05 \)) et pour des durées d'investissement de \( t=10 \), \( 20 \) et \( 30 \) ans.
+              
+              \item Représenter graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d’investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d’investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
+          \end{enumerate}
+          
+\end{enumerate}
+>>>>>>> a0917c3 (Ajout Q2.7 et Q2.8)
 
 \newpage
     
