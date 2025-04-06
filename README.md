@@ -13,7 +13,7 @@ Le projet a pour but de fournir des outils éducatifs accessibles et intuitifs p
 ## Technologies Utilisées
 - **Backend** : Kotlin, Spring Boot, Gradle.
 - **Frontend** : HTML, CSS, JavaScript.
-- **PDF Generation** : LaTeX, pdflatex.
+- **PDF Generation** : Latexmk.
 - **API Documentation** : Swagger/OpenAPI.
 
 ## Prérequis
