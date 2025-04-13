@@ -5,42 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Un projet éducatif sur les finances personnelles et le développement logiciel">
     <title>Intérêts simples et composés</title>
-    <!-- Lien vers une feuille de style externe -->
-    <link rel="stylesheet" href="styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6c757d;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/100/100') repeat;
+            background-size: 100px;
+            opacity: 0.1;
+            animation: moveBackground 20s linear infinite;
+        }
+        
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            flex: 1;
+            align-items: start;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        section:hover::after {
+            transform: scaleX(1);
+        }
+        
+        h2 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .btn, button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover, button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: #3a5685;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--dark-color);
+            color: white;
+            flex-shrink: 0; /* Empêche le footer de rétrécir */
+            width: 100%;
+            height: var(--footer-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer a {
+            color: white;
+        }
+		footer a:hover {
+            color: #f39c12;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Intérêts simples et composés</h1>
-        <p>Un espace dédié aux finances personnelles et au développement logiciel.</p>
     </header>
-
     <main>
         <section>
             <h2>Consulter le PDF</h2>
             <p>
-                Télécharger ou consulter le document PDF généré à partir du code LaTeX.
+                Le document explore les intérêts simples et composés sous un angle mathématique. Il s’adresse à un public déjà initié, cherchant à mieux comprendre les fondements des mécanismes financiers.
             </p>
-            <a href="assets/document.pdf" target="_blank" class="btn">Voir le PDF</a>
+            <a href="pdf/main.pdf" target="_blank" class="btn">Voir le PDF</a>
         </section>
-
         <section>
-            <h2>Application Interactive</h2>
+            <h2>Application interactive</h2>
             <p>
-                Découvrez l'application interactive pour expérimenter les notions abordées dans le document.
+                L'application interactive permet d'expérimenter les notions abordées dans le document grâce à la simulation de différents scénarios d'investissement.
             </p>
             <button onclick="lancerApplication()">Lancer l'application</button>
         </section>
     </main>
-
     <footer>
-        <p>Gaetan Bouget</p>
-    </footer>
+		<p><a href="https://github.com/gbouget/annual_equivalent_rate" target="_blank"><i class="fab fa-github">&nbsp;</i>GitHub</a></p>
+	</footer>
 
     <!-- Script JavaScript -->
     <script>
         function lancerApplication() {
-            alert("TODO");
+            alert("L'application sera disponible prochainement!");
         }
+        
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            function checkVisibility() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight * 0.8);
+                    
+                    if (isVisible) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialiser les sections comme invisibles
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+            
+            // Vérifier la visibilité au chargement et au défilement
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
     </script>
 </body>
 </html>
