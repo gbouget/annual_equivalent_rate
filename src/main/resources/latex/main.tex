@@ -305,9 +305,9 @@
                 \item Exprimer le coefficient multiplicateur \( k(t) \) en fonction de la durée \( t \) et du taux périodique \( r \) dans le cas des intérêts composés. Vérifier la cohérence de ce résultat en appliquant la formule pour un taux de \( 5\,\% \) (c'est-à-dire \( r=0,05 \)) et pour des durées d'investissement de \( t=10 \), \( 20 \) et \( 30 \) ans.
 
                 \item Représenter graphiquement le coefficient multiplicateur du capital initial en fonction de la durée d’investissement pour le taux périodique $r_q = 5\%$. Relever graphiquement le coefficient multiplicateur pour les durées d’investissement à 10 ans, 20 ans, 30 ans, 50 ans et 100 ans.
-				
-				\item Utiliser les valeurs du coefficient multiplicateur obtenues graphiquement pour déterminer le capital final après 10 ans, 20 ans, 30 ans, 50 ans et 100 ans, en partant d'un capital initial de $72\,924,56$\ € et avec un taux périodique de 5\%.
-				
+                
+                \item Utiliser les valeurs du coefficient multiplicateur obtenues graphiquement pour déterminer le capital final après 10 ans, 20 ans, 30 ans, 50 ans et 100 ans, en partant d'un capital initial de $72\,924,56$\ € et avec un taux périodique de 5\%.
+                
             \end{enumerate}
 
 \newpage
@@ -664,6 +664,110 @@
                 La BCE vise une inflation cible de \( 2\% \), un équilibre permettant d’éviter les excès déflationnistes tout en limitant l’érosion des rendements. Cependant, même une inflation modérée agit avec un effet boule de neige : l’augmentation lente mais cumulée des prix, année après année, ronge progressivement la valeur réelle des intérêts simples, dont le montant reste constant.
 
                 \item Lorsque les intérêts générés sont réinvestis dans un actif financier, ils produisent à leur tour des intérêts. Ce mécanisme, appelé capitalisation des intérêts ou intérêts composés, consiste à incorporer les gains au capital initial, ce qui augmente progressivement la base de calcul des futurs intérêts et engendre une croissance exponentielle du rendement.
-            \end{enumerate}    
+            \end{enumerate}
+            
+        \subsection*{Étape 2 : calcul du capital final pour les actifs à intérêts composés}
+            \noindent
+            \textbf{Formule générale pour les intérêts composés :}
+                \[
+                C^{\text{composé}}(t) = C_0 \times (1 + r)^t
+                \]
+
+            où $r_a = 5\% = 0,05$ et \( r_q = \frac{5}{365}\% = \frac{0,05}{365} \), et \( t \) la durée exprimée en jours.
+
+            \begin{enumerate}[label=\textbf{R2.\arabic*}]
+                \item \textbf{Actif \( A_q^c \) (capitalisation quotidienne avec intérêts composés)}
+                    \[
+                        C_q^c(t) = 100\,000 \times \left(1 + \frac{0,05}{365}\right)^t
+                    \]
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( t = 1 \) jour : 
+                        \[
+                            C_q^c(1) = 100\,000 \times \left(1 + \frac{0,05}{365}\right)^1 = \boxed{100\,013,70\ \text{€}}
+                        \]
+                        
+                        \item $t = 30$ jours : 
+                        \[
+                            C_q^c(30) = 100\,000 \times \left(1 + \frac{0,05}{365}\right)^{30} = \boxed{100\,411,78\ \text{€}}
+                        \]
+                        
+                        \item $t = 1\ \text{an} = 365\ \text{jours}$~: 
+                        \[
+                            C_q^c(365) = 100\,000 \times \left(1 + \frac{0,05}{365}\right)^{365} = \boxed{105\,126,75\ \text{€}}
+                        \]
+                        
+                        \item $t = 30\ \text{ans} = 10\,950\ \text{jours}$~: 
+                        \[
+                            C_q^c(30) = 100\,000 \times \left(1 + \frac{0,05}{365}\right)^{10\,950} = \boxed{448\,122,87\ \text{€}}
+                        \]
+                    \end{enumerate}
+                
+                \item \textbf{Actif \( A_a^c \) (capitalisation annuelle avec intérêts composés)} \\
+                    Puisque les intérêts ne sont ajoutés que si le capital reste investi pendant une année complète (365 jours), la fonction \emph{partie entière}, notée $\lfloor \cdot \rfloor$, est utilisée pour modéliser cette condition.
+                    \[
+                        C_a^c(t) = 100\,000 \times \left(1 + 0,05\right)^{\left\lfloor \frac{t}{365} \right\rfloor}
+                    \]
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( t = 1 \) jour : 
+                        \begin{align*}
+                            C_a^c(1) &= 100\,000 \times \left(1 + 0,05\right)^{\left\lfloor \frac{1}{365} \right\rfloor} \\
+                            & = 100\,000 \times \left(1 + 0,05 \right)^0                                               \\
+                            & = 100\,000 \times (1,05)^0                                                                \\
+                            & = 100\,000 \times 1                                                                      \\
+                            & = \boxed{100\,000\ \text{€}}                                                           
+                        \end{align*}
+
+                        \item \( t = 30 \) jours : 
+                        \begin{align*}
+                            C_a^c(30) &= 100\,000 \times \left(1 + 0,05\right)^{\left\lfloor \frac{30}{365} \right\rfloor} \\
+                            & = 100\,000 \times \left(1 + 0,05 \right)^0  \\
+                            & = \boxed{100\,000\ \text{€}}                                                            
+                        \end{align*}
+
+                        \item $t = 1\ \text{an} = 365\ \text{jours}$~: 
+                        \begin{align*}
+                            C_a^c(365) &= 100\,000 \times \left(1 + 0,05\right)^{\left\lfloor \frac{365}{365} \right\rfloor} \\
+                            & = 100\,000 \times \left(1 + 0,05 \right)^1                                                \\
+                            & = 100\,000 \times 1,05                                                                     \\
+                            & = \boxed{105\,000\ \text{€}}                                                             
+                        \end{align*}
+
+                        \item $t = 30\ \text{ans} = 10\,950\ \text{jours}$~: 
+                        \begin{align*}
+                            C_a^c(10\,950) &= 100\,000 \times \left(1 + 0,05\right)^{\left\lfloor \frac{10\,950}{365} \right\rfloor} \\
+                            & = 100\,000 \times \left(1 + 0,05 \right)^{30}                                             \\
+                            & = 100\,000 \times \left(1,05 \right)^{30}                                             \\
+                            & = \boxed{432\,194,34\ \text{€}}                                                                 
+                        \end{align*}
+                    \end{enumerate}
+                    
+                \item Voir table \ref{tab:compound_interest_results}.
+                \begin{table}[h!]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|}
+                        \hline
+                        \textbf{Actif} & \textbf{1 jour}  & \textbf{30 jours} & \textbf{1 an}    & \textbf{30 ans}  \\
+                        \hline
+                        \( A_q^s \)    & 100\,013,70\ € & 100\,410,96\ €  & 105\,000,00\ € & 250\,000,00\ € \\
+                        \hline
+                        \( A_a^s \)    & 100\,000,00\ € & 100\,000,00\ €  & 105\,000,00\ € & 250\,000,00\ € \\
+                        \hline
+                        \( A_q^c \)    & 100\,013,70\ € & 100\,411,78\ €  & 105\,126,75\ € & 448\,122,87\ € \\
+                        \hline
+                        \( A_a^c \)    & 100\,000,00\ € & 100\,000,00\ €  & 105\,000,00\ € & 432\,194,34\ € \\
+                        \hline
+                    \end{tabular}
+                    \caption{Résultats pour les intérêts simples et composés (\( C_0 = 100\,000\ \text{€} \)).}
+                    \label{tab:compound_interest_results}
+                \end{table} 
+                
+                \item \textbf{Fonctions de capitalisation} :
+                    \begin{enumerate}[label=(\alph*)]
+                        \item \( C_q^c(t) = C_0 \times \left(1 + r_q \right)^t \)
+                        \item \( C_a^c(t) = C_0 \times \left(1 + r_a \right)^{\left\lfloor\frac{t}{365}\right\rfloor} \)
+                    \end{enumerate}
+            \end{enumerate}
+
+                
 
 \end{document}
