@@ -767,14 +767,14 @@
                         \item \( C_q^c(t) = C_0 \times \left(1 + r_q \right)^t \)
                         \item \( C_a^c(t) = C_0 \times \left(1 + r_a \right)^{\left\lfloor\frac{t}{365}\right\rfloor} \)
                     \end{enumerate}
-					
-				\item Les graphiques en figure \ref{fig:compound_interets_50k}, \ref{fig:compound_interets_100k} et \ref{fig:compound_interets_200k} représentent quatres courbes correspondant aux fonctions :
+                    
+                \item Les graphiques en figure \ref{fig:compound_interets_50k}, \ref{fig:compound_interets_100k} et \ref{fig:compound_interets_200k} représentent quatres courbes correspondant aux fonctions :
                 \begin{align*}
-					C_q^s(t) &= C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right) &&\text{(courbe bleue)} \\[2ex]
-					C_a^s(t) &= C_0 \times \left(1 + 0{,}05 \times \left\lfloor\frac{t}{365}\right\rfloor\right) &&\text{(courbe rouge)} \\[2ex]
-					C_q^c(t) &= C_0 \times \left(1 + \frac{0{,}05}{365} \right)^t &&\text{(courbe verte)} \\[2ex]
-					C_a^c(t) &= C_0 \times \left(1 + 0{,}05 \right)^{\left\lfloor\frac{t}{365}\right\rfloor} &&\text{(courbe violette)}
-				\end{align*}
+                    C_q^s(t) &= C_0 \times \left(1 + \frac{0{,}05}{365} \times t\right) &&\text{(courbe bleue)} \\[2ex]
+                    C_a^s(t) &= C_0 \times \left(1 + 0{,}05 \times \left\lfloor\frac{t}{365}\right\rfloor\right) &&\text{(courbe rouge)} \\[2ex]
+                    C_q^c(t) &= C_0 \times \left(1 + \frac{0{,}05}{365} \right)^t &&\text{(courbe verte)} \\[2ex]
+                    C_a^c(t) &= C_0 \times \left(1 + 0{,}05 \right)^{\left\lfloor\frac{t}{365}\right\rfloor} &&\text{(courbe violette)}
+                \end{align*}
                 avec \( C_0 \in \bigl\{50\,000,\ 100\,000,\ 200\,000\bigr\}\,\text{€} \).
 
                 Axes :
@@ -783,16 +783,16 @@
                     \item L'axe des ordonnées (vertical) représente le capital en euros.
                 \end{itemize}
 
-				L'analyse du graphique permet de tirer les constats suivants :
-				\begin{itemize}
-					\item La courbe bleue représentant la capitalisation quotidienne des intérêts simples illustre une croissance linéaire du capital au fil du temps.
-					\item La courbe verte associée à la capitalisation quotidienne des intérêts composés témoigne d'une croissance exponentielle du capital.
-					\item La courbe rouge correspondant à la capitalisation annuelle des intérêts simples se traduit par une fonction en escalier, caractérisée par des augmentations discrètes, suivant une progression linéaire.
-					\item De même, la courbe violette représentant la capitalisation annuelle des intérêts composés se manifeste sous la forme d'une fonction en escalier, avec des augmentations discrètes, mais selon une dynamique exponentielle.
-					\item Les actifs bénéficiant d’intérêts composés (courbes verte et violette) s'avèrent plus rentables que ceux rémunérés par des intérêts simples (courbes bleue et rouge).
-					\item Avec le temps, la croissance des actifs à intérêts composés (verte et violette) devient de plus en plus marquée, accentuant l’écart avec les actifs à intérêts simples (bleue et rouge), dont la croissance demeure constante.
-					\item Tandis que le montant des intérêts simples (bleue et rouge) ajoutés chaque année demeure constant, la capitalisation quotidienne des intérêts composés (verte) génère une progression plus rapide du capital que la capitalisation annuelle (violette), et ce, dès la première année.
-				\end{itemize}
+                L'analyse du graphique permet de tirer les constats suivants :
+                \begin{itemize}
+                    \item La courbe bleue représentant la capitalisation quotidienne des intérêts simples illustre une croissance linéaire du capital au fil du temps.
+                    \item La courbe verte associée à la capitalisation quotidienne des intérêts composés témoigne d'une croissance exponentielle du capital.
+                    \item La courbe rouge correspondant à la capitalisation annuelle des intérêts simples se traduit par une fonction en escalier, caractérisée par des augmentations discrètes, suivant une progression linéaire.
+                    \item De même, la courbe violette représentant la capitalisation annuelle des intérêts composés se manifeste sous la forme d'une fonction en escalier, avec des augmentations discrètes, mais selon une dynamique exponentielle.
+                    \item Les actifs bénéficiant d’intérêts composés (courbes verte et violette) s'avèrent plus rentables que ceux rémunérés par des intérêts simples (courbes bleue et rouge).
+                    \item Avec le temps, la croissance des actifs à intérêts composés (verte et violette) devient de plus en plus marquée, accentuant l’écart avec les actifs à intérêts simples (bleue et rouge), dont la croissance demeure constante.
+                    \item Tandis que le montant des intérêts simples (bleue et rouge) ajoutés chaque année demeure constant, la capitalisation quotidienne des intérêts composés (verte) génère une progression plus rapide du capital que la capitalisation annuelle (violette), et ce, dès la première année.
+                \end{itemize}
 
 
                 \begin{figure}[h!]
@@ -801,15 +801,15 @@
                     \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples et composés pour un capital initial de 50\ 000\ \text{€}.}
                     \label{fig:compound_interets_50k}
                 \end{figure}
-				
-				\begin{figure}[h!]
+                
+                \begin{figure}[h!]
                     \centering
                     \includegraphics[width=\textwidth]{assets/img/compound_interets_100k.png}
                     \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples et composés pour un capital initial de 100\ 000\ \text{€}.}
                     \label{fig:compound_interets_100k}
                 \end{figure}
-				
-				\begin{figure}[h!]
+                
+                \begin{figure}[h!]
                     \centering
                     \includegraphics[width=\textwidth]{assets/img/compound_interets_200k.png}
                     \caption{Comparaison de la capitalisation quotidienne et annuelle des intérêts simples et composés pour un capital initial de 200\ 000\ \text{€}.}
